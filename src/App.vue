@@ -1,85 +1,44 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
+
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+ 
+ <div id="app" class="min-h-screen bg-gradient-to-br from-purple-400 to-indigo-600">
+  <nav class="p-4 bg-white bg-opacity-20 backdrop-blur-lg">
+    <div class="container mx-auto flex items-center justify-between">
+      <router-link to="/" class="text-white font-bold text-2xl"> Educational app</router-link>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <div class="space-x-4">
+        <router-link to="/profile" class="text-white hover:text-purple-200 transition duration-300">Profile</router-link>
+        <router-link to="/Learn" class="text-white hover:text-purple-200 transition duration-300">Learn</router-link>
+        <router-link to="/Login" class="text-white hover:text-purple-200 transition duration-300">Login</router-link>
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+
+      </div>
     </div>
-  </header>
+    
+  </nav>
+  <main class="container mx-auto p-4">
+    <transition name="fade" mode="out-in">
+      <router-view></router-view>
+    </transition>
+  </main>
 
-  <RouterView />
+
+ </div>
+
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+<script lang="ts">
+export default {
+  name: 'App'
 }
+</script>
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+<style>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
 }
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.fade-enter, fade-leave-to {
+  opacity: 0;
 }
 </style>
