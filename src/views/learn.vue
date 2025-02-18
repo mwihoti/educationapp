@@ -14,6 +14,33 @@
       <transition name="fade" mode="out-in">
         <div v-if="currentQuestion" key="question" class="bg-white rounded-lg p-6 mb-8 shadow-inner">
             <p class="text-2xl mb-6 font-semibold text-purple-800">{{  currentQuestion.question }}</p>
+            <input type="text" v-model="userAnswer" @keyup.enter="checkAnswer" class="w-full px-4 py-2 rounded-full mb-4 focus:outline-none focus:ring-2 focus:ring-purple-600 text-lg" placeholder="Your answer...">
+            <div class="flex space-x-4">
+
+                <button @click="checkAnswer" class="flex-1 bg-green-500 text-white font-bold py-3 px-6 rounded-full hover:bg-green-600 transition duration-500 
+                transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+            Submit Answer</button>
+
+                <button @click="generateQuestion" class="flex-1 bg-blue-500 text-white font-bold py-3 px-6 rounded-full hover:bg-blue-600 transition duration-500 transform hover:scale-105 focus:ring-opacity-50">
+                    New Question
+                </button>
+
+            </div>
+
+        </div>
+        <div v-else key="loading" class="text-center text-white text-2xl">
+            loading question...
+        </div>
+      </transition>
+      <transition name="bounce">
+        <div v-if="feedback" :class="['p-6 rounded-lg mb-6 text-center text-xl font-bold', feedbackClass]">
+            {{  feedback }}
+        </div>
+      </transition>
+      <transition name="slide-fade">
+        <div v-if="explanation" class="bg-yellow-100 p-6 rounded-lg mb-6">
+            <p class="font-bold text-yellow-800 mb-2 text-lg">Explanation:</p>
+            <p class="text-yellow-800 text-lg">{{ explanation }}</p>
         </div>
       </transition>
     </div>
