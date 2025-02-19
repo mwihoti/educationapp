@@ -39,14 +39,14 @@ async function connectToDatabase() {
 
 // Middleware to verify JWT TOKEN
 const authenticateToken = (req: Request, res: Response,  next: NextFunction) => {
-    const authHeader = req.header["authorization"]
+    const authHeader = req.headers["authorization"]
     const token = authHeader && authHeader.split(" ")[1];
 
     if (token  == null) return res.sendStatus(401)
 
     jwt.verify(token, JWT_SECRET, (err: any, user: any) => {
-      if (err) return res.sendStatus(403) 
-      :(req as any).user = user
+      if (err) return res.sendStatus(403);
+      (req as any).user = user
       next()
 })
 }
@@ -63,8 +63,8 @@ app.get("/", (req, res) => {
 
 app.get("/testdb", async(req: Request, res: Response) => {
     try {
-        const collections = await database.collection("testApp");
-        const users = collections.find({}).toArray();
+        const collections =  database.collection("testApp");
+        const users = await collections.find({}).toArray();
 
         res.json(users);
     } catch (error) {
@@ -72,4 +72,18 @@ app.get("/testdb", async(req: Request, res: Response) => {
     }
 })
 
-export { database }; // If other files need access to the database
+app.post("/register", async (req: Request, res: Response) => {
+    try {
+        const { username, email, password } = req.body
+        const users = database.collection("users")
+
+        const newUser = await users.insertOne({
+            username,
+            email,
+            password
+        })
+        res.status(201).json({ message: "User created successfully ", userId: newUser.insertedId })
+    } catch (error) {
+        res.status(500).json({ error: "registration failed"})
+    }
+})
