@@ -3,6 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import LearnMath from '@/views/learn.vue'
 import ProfileView from '@/views/profile.vue'
 import RegisterVue from '@/views/Register.vue'
+import LoginVue from '@/views/Login.vue'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -34,6 +36,11 @@ const router = createRouter({
       path: '/register',
       name: 'RegisterVue',
       component: RegisterVue
+    },
+    {
+      path: '/login',
+      name: 'LoginVue',
+      component: LoginVue
     }
 
   ],

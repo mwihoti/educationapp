@@ -1,0 +1,42 @@
+<template>
+<div class="max-w-md mx-auto bg-white rounded-lg shadow-md p-8">
+<h2 class="text-3xl font-bold mb-6 text-purple-700">Login</h2>
+<form @submit.prevent="login">
+
+    <div class="mb-4">
+        <label for="username" class="block text-gray-700 font-bold mb-2">Username</label>
+        <input type="text" id="username" v-model="username" class="w-full px-3 py-2 border rounded-lg 
+        focus:outline-none focus:ring-2 focus:ring-purple-600" required>
+    </div>
+    <div class="mb-6">
+        <label for="password" class="block text-gray-700 font-bold mb-2">Password</label>
+        <input type="password" id="password" v-model="password" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2
+         focus:ring-purple-600" required>
+    </div>
+    <button type="submit" class="w-full bg-purple-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-purple-700 transition duration--300
+    focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50"> Login</button>
+</form>
+<p class="mt-4 text-center">
+    Don't have an account? <router-link to="/register" class="text-purple-600 font-bold hover:underline">Register</router-link>
+</p>
+</div>
+
+</template>
+
+<script lang="ts">
+export default {
+    name: 'LoginVue',
+    data () {
+        return{
+        username: '',
+        password: '',
+    }
+    },
+    methods: {
+        register () {
+            console.log('Login', this.username, this.password)
+        }
+    }
+}
+
+</script>
