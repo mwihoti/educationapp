@@ -87,3 +87,13 @@ app.post("/register", async (req: Request, res: Response) => {
         res.status(500).json({ error: "registration failed"})
     }
 })
+app.get("/users", async (req: Request, res: Response) => {
+    try {
+        const users = database.collection("users");
+        const allUsers = await users.find().toArray();
+        res.status(200).json(allUsers);
+    } catch (error) {
+        res.status(500).json({ error: "Failed to fetch users"})
+
+    }
+})
