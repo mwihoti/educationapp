@@ -1,18 +1,27 @@
 import 'dotenv/config';
-import express, { Request, Response } from 'express';
-import { MongoClient, Db } from 'mongodb';
+import express, { type Request, type Response, type NextFunction} from 'express';
+import { MongoClient, type Db, ObjectId } from 'mongodb';
 import cors from 'cors';
-import multer from 'multer';
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+
 
 const app = express();
 app.use(cors());
+app.use(express.json())
 
 const PORT = process.env.PORT||3000
 const CONNECTION = process.env.DB_URI;
+const JWT_SECRET = process.env.JWT_SECRET;
+
 const databaseName = "testApp";
 
 if (!CONNECTION) {
     throw new Error("DB_URI is not defined in environment variables");
+}
+
+if (!JWT_SECRET) {
+    throw new Error("JWT_SECRET is not defined in enviroment variable")
 }
 
 let database: Db;
@@ -26,6 +35,20 @@ async function connectToDatabase() {
         console.error("Error connecting to MongoDB:", error);
         process.exit(1); // Exit the process if database connection fails
     }
+}
+
+// Middleware to verify JWT TOKEN
+const authenticateToken = (req: Request, res: Response,  next: NextFunction) => {
+    const authHeader = req.header["authorization"]
+    const token = authHeader && authHeader.split(" ")[1];
+
+    if (token  == null) return res.sendStatus(401)
+
+    jwt.verify(token, JWT_SECRET, (err: any, user: any) => {
+      if (err) return res.sendStatus(403) 
+      :(req as any).user = user
+      next()
+})
 }
 
 // Connect to the database before starting the server
