@@ -133,11 +133,13 @@ app.post('/login', async (req: Request, res: Response) => {
             return res.status(400).json({ error: "Invalid password"})
         }
         // create and assign token
-        const token = jwt.sign({ id: user._id }, JWT_SECRET, { expires: "1h"})
-        res.json({ token, userId: user._id})
+        const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: "1h"})
+        res.status(200).json({ token, userId: user._id,  message: "Logged in successfully"})
 
 
     } catch (error) {
+        console.error("Login failed", error);
+
         res.status(500).json({ error: "Login failed"})
     }
 })
