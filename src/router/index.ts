@@ -1,13 +1,13 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import LearnMath from '@/views/learn.vue'
 import ProfileView from '@/views/profile.vue'
 import RegisterVue from '@/views/Register.vue'
 import LoginVue from '@/views/Login.vue'
+import { useAuth } from '@/contexts/AuthContext'
+import process from 'process'
 
-const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
+const routes: Array<RouteRecordRaw> =[
     {
       path: '/',
       name: 'home',
@@ -24,13 +24,14 @@ const router = createRouter({
     {
       path: '/learn',
       name: 'LearnMath',
-      component: LearnMath
-
+      component: LearnMath,
+      meta: { requiresAuth: true}
     },
     {
       path: '/profile',
       name: 'ProfileView',
-      component: ProfileView
+      component: ProfileView,
+      meta: { requiresAuth: true}
     }, 
     {
       path: '/register',
@@ -41,9 +42,23 @@ const router = createRouter({
       path: '/login',
       name: 'LoginVue',
       component: LoginVue
+    },
+
+  ]
+  
+  const router = createRouter({
+    history: createWebHistory(process.env.BASE_URL),
+    routes,
+  })
+
+  router.beforeEach((to, from, next) => {
+    const {token} = useAuth()
+    if ( to.matched.some((record) => record.meta.requiresAuth) && !token) {
+      next('/login')
+    } else {
+      next()
     }
 
-  ],
 })
 
 export default router
