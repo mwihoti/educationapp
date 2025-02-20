@@ -30,6 +30,21 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
 
     useEffect(() => {
+        const storedToken = localStorage.getItem("token")
+        const storedUserId = localStorage.getItem("userId")
+        if (storedToken && storedUserId) {
+            setToken(storedToken)
+            setUserId(storedUserId)
+        }
 
-    })
+    }, [])
+    return <AuthContext.Provider value={{ token, userId, login, logout}}>{children}</AuthContext.Provider>
+ }
+
+ export const useAuth = () => {
+    const context = useContext(AuthContext)
+    if (context === undefined) {
+        throw new Error("UseAuth must be used within an AuthProvider")
+    }
+    return context
  }
