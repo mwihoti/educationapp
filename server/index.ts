@@ -4,6 +4,7 @@ import { MongoClient, type Db, ObjectId } from 'mongodb';
 import cors from 'cors';
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { error } from 'console';
 
 
 const app = express();
@@ -111,5 +112,32 @@ app.get("/users", async (req: Request, res: Response) => {
     } catch (error) {
         res.status(500).json({ error: "Failed to fetch users"})
 
+    }
+})
+
+app.post('/login', async (req: Request, res: Response) => {
+    try {
+        const { email, password } = req.body;
+        const users = database.collection("users")
+
+
+        //Find user
+        const user = await users.findOne({ email })
+        if (!user) {
+            return res.status(400).json({ error: "User not found"})
+        }
+
+        //Check password
+        const validPassword = await bcrypt.compare(password, user.password)
+        if (!validPassword) {
+            return res.status(400).json({ error: "Invalid password"})
+        }
+        // create and assign token
+        const token = jwt.sign({ id: user._id }, JWT_SECRET, { expires: "1h"})
+        res.json({ token, userId: user._id})
+
+
+    } catch (error) {
+        res.status(500).json({ error: "Login failed"})
     }
 })
