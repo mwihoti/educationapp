@@ -77,10 +77,26 @@ app.post("/register", async (req: Request, res: Response) => {
         const { username, email, password } = req.body
         const users = database.collection("users")
 
+        //check if user already exists
+        const existingUser = await users.findOne({ email })
+        if (existingUser) {
+            return res.status(400).json({ error: "User already exists"})
+        }
+
+        // Hash password
+        const hashedPassword = await bcrypt.hash(password, 10);
+
         const newUser = await users.insertOne({
             username,
             email,
-            password
+            password: hashedPassword,
+            createdAt: new Date(),
+            profile: {
+                about: "",
+                correctAnswers: 0,
+                incorrectAnswers: 0,
+                totalQuestions: 0,
+            }
         })
         res.status(201).json({ message: "User created successfully ", userId: newUser.insertedId })
     } catch (error) {
