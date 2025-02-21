@@ -65,18 +65,18 @@ export default defineComponent({
 
         const saveProfile = async () => {
             try {
-                const response = await fetch(`http://localhost:3000/login`, {
+                const response = await fetch(`http://localhost:3000/profile`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`
+                        'Authorization': `Bearer ${auth.token.value}`
                     },
                     body: JSON.stringify({about: about.value })
                 });
                 if (!response.ok) {
                     throw new Error('Failed to update profile')
                 }
-                console.log('Profile updated successfully')
+                console.log('Profile updated successfully');
             } catch (error) {
                 console.error('Error updating profile!', error)
             }
