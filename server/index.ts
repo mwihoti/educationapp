@@ -145,3 +145,16 @@ app.post('/login', async (req: Request, res: Response) => {
         res.status(500).json({ error: "Login failed"})
     }
 })
+
+app.get('/profile', authenticateToken, async (req: Request, res: Response) => {
+    try {
+        const users = database.collection("users")
+        const user = await users.findOne({ _id: new ObjectId((req as any).user.id) })
+        if (!user) {
+            return res.status(404).json({ error: "user not found"})
+        } res.json({ profile: user.profile})
+    } catch (error) {
+            res.status(500).json({error: "Failed to fetch profile"})
+        }
+    
+})

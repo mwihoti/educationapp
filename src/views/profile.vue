@@ -31,31 +31,66 @@
 </template>
 
 <script lang="ts">
-export default {
-    name: 'ProfileView',
-    data() {
+import { defineComponent, ref, onMounted } from 'vue';
+import { useAuth } from '@/contexts/AuthContext';
+export default defineComponent({
+    name: 'profileVue',
+    setup() {
+        const { token } = useAuth();
+        const about = ref('');
+        const correctAnswers = ref(0);
+        const incorrectAnswers = ref(0);
+        const totalQuestions = ref(0);
+
+        const fetchProfile = async () => {
+            try {
+                const response = await fetch(`http://localhost:3000/profile`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+                if (!response.ok) {
+                    throw new Error("Failed to fetch profile")
+                }
+                const data = await response.json();
+                about.value = data.profile.about;
+                correctAnswers.value = data.profile.correctAnswers;
+                incorrectAnswers.value = data.profile.incorrectAnswers;
+                totalQuestions.value = data.profile.totalQuestions;
+            }
+            catch (error) {
+                console.error('Failed to fetch profile', error)
+            }
+        };
+
+        const saveProfile = async () => {
+            try {
+                const response = await fetch(`http://localhost:3000/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({about: about.value })
+                });
+                if (!response.ok) {
+                    throw new Error('Failed to update profile')
+                }
+                console.log('Profile updated successfully')
+            } catch (error) {
+                console.error('Error updating profile!', error)
+            }
+        };
+        onMounted(fetchProfile);
+
         return {
-            about: '',
-            correctAnswers: 0,
-            incorrectAnswers: 0,
-            totalQuestions: 0
+            about,
+            correctAnswers,
+            incorrectAnswers,
+            totalQuestions,
+            saveProfile
         }
-    },
-    methods: {
-        saveProfile() {
-            // Todo to implement save profile logic here
-            console.log('Save profile:', this.about)
-        }
-    },
-    mounted() {
-        // Fetch user profile and progress data
-        // To replace with actual api calls
-        this.about = "I love learning math!"
-        this.correctAnswers = 25
-        this.incorrectAnswers = 5
-        this.totalQuestions = 30
-         
     }
-}
+})
 
 </script>

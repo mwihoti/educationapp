@@ -26,15 +26,41 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import { useRouter } from 'vue-router';
-
+import { useAuth } from '@/contexts/AuthContext';
 export default  defineComponent({
     name: 'LoginVue',
     setup() {
         const username = ref('');
         const password = ref('');
         const router = useRouter();
+        const { login } = useAuth();
 
-        const handleLogin = async () => {
+        const handleLogin = async () => export default {
+    name: 'ProfileView',
+    data() {
+        return {
+            about: '',
+            correctAnswers: 0,
+            incorrectAnswers: 0,
+            totalQuestions: 0
+        }
+    },
+    methods: {
+        saveProfile() {
+            // Todo to implement save profile logic here
+            console.log('Save profile:', this.about)
+        }
+    },
+    mounted() {
+        // Fetch user profile and progress data
+        // To replace with actual api calls
+        this.about = "I love learning math!"
+        this.correctAnswers = 25
+        this.incorrectAnswers = 5
+        this.totalQuestions = 30
+         
+    }
+}{
             try {
                 const response = await fetch(`http://localhost:3000/login`, {
                     method: 'POST',
@@ -49,11 +75,38 @@ export default  defineComponent({
                 if (!response.ok)   {
                     throw new Error('Login failed!')
                 }
+                const data = await response.json();
+                login(data.token, data.userId)
                 router.push('/learn');
             } catch (error) {
                 console.error("Error during login", error);
             }
+        }export default {
+    name: 'ProfileView',
+    data() {
+        return {
+            about: '',
+            correctAnswers: 0,
+            incorrectAnswers: 0,
+            totalQuestions: 0
         }
+    },
+    methods: {
+        saveProfile() {
+            // Todo to implement save profile logic here
+            console.log('Save profile:', this.about)
+        }
+    },
+    mounted() {
+        // Fetch user profile and progress data
+        // To replace with actual api calls
+        this.about = "I love learning math!"
+        this.correctAnswers = 25
+        this.incorrectAnswers = 5
+        this.totalQuestions = 30
+         
+    }
+}
         return {
             username,
             password,
