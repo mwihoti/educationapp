@@ -101,8 +101,10 @@ app.post("/register", async (req: Request, res: Response) => {
         })
         res.status(201).json({ message: "User created successfully ", userId: newUser.insertedId })
     } catch (error) {
-        res.status(500).json({ error: "registration failed"})
+        console.error("Error during registration:", error);
+        res.status(500).json({ error: "Registration failed" });
     }
+    
 })
 app.get("/users", async (req: Request, res: Response) => {
     try {

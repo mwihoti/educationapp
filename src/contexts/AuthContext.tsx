@@ -1,50 +1,48 @@
 "use client"
-import type React from "react"
-import { createContext, useState, useContext, useEffect } from "react"
 
-interface AuthContextType { 
-    token: string | null
-    userId: string | null
-    login: (token: string, userId: string) => void
-    logout: () => void
+import { ref, inject, provide } from 'vue'
+import type { Ref, InjectionKey } from 'vue'
+interface AuthContextType {
+  token: Ref<string | null>
+  userId: Ref<string | null>
+  login: (token: string, userId: string) => void
+  logout: () => void
 }
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
-export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const [token, setToken] = useState<string | null>(localStorage.getItem("token"))
-    const [userId, setUserId] = useState<string | null>(localStorage.getItem("userId"))
+export const AuthKey = Symbol() as InjectionKey<AuthContextType>
 
+// Provider function to use in parent components
+export function provideAuth() {
+    const token = ref<string | null>(localStorage.getItem("token"))
+    const userId = ref<string | null>(localStorage.getItem('userId'))
 
-    const login = (token: string, userId: string) => {
-        setToken(token)
-        setUserId(userId)
-        localStorage.setItem("token", token)
-        localStorage.setItem("userId", userId)
+    const login = (newToken: string, newUserId: string) => {
+        token.value = newToken
+        userId.value = newUserId
+        localStorage.setItem("token", newToken)
+        localStorage.setItem("userId", newUserId)
     }
+
     const logout = () => {
-        setToken(null)
-        setUserId(null)
-        localStorage.removeItem('token')
-        localStorage.removeItem('userId')
+        token.value = null
+        userId.value = null
+        localStorage.removeItem("token")
+        localStorage.removeItem("userId")
     }
 
-    useEffect(() => {
-        const storedToken = localStorage.getItem("token")
-        const storedUserId = localStorage.getItem("userId")
-        if (storedToken && storedUserId) {
-            setToken(storedToken)
-            setUserId(storedUserId)
-        }
+    const authContext = { token, userId, login, logout}
+    provide(AuthKey, authContext)
 
-    }, [])
-    return <AuthContext.Provider value={{ token, userId, login, logout}}>{children}</AuthContext.Provider>
- }
+    return authContext
 
- export const useAuth = () => {
-    const context = useContext(AuthContext)
-    if (context === undefined) {
-        throw new Error("UseAuth must be used within an AuthProvider")
+}
+
+export function useAuth(): AuthContextType {
+    const auth = inject(AuthKey)
+    if (!auth) {
+        throw new Error('useAuth() must be used within component that has called provideAuth()')
+
     }
-    return context
- }
+    return auth
+}

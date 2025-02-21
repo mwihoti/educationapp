@@ -10,17 +10,18 @@
       <div class="space-x-4">
         <router-link to="/profile" class="text-white hover:text-purple-200 transition duration-300">Profile</router-link>
         <router-link to="/Learn" class="text-white hover:text-purple-200 transition duration-300">Learn</router-link>
-        <router-link to="/Login" class="text-white hover:text-purple-200 transition duration-300">Login</router-link>
-
-
+        <router-link v-if="!isLoggedIn" to="/Login" class="text-white hover:text-purple-200 transition duration-300">Login</router-link>
+        <button v-else @click="handleLogout" class="text-white hover:text-purple-200 transition duration-300">Logout</button>
       </div>
     </div>
     
   </nav>
   <main class="container mx-auto p-4">
+    <router-view v-slot="{ Component }">
     <transition name="fade" mode="out-in">
-      <router-view></router-view>
+      <component :is="Component" />
     </transition>
+  </router-view>
   </main>
 
 
@@ -29,9 +30,29 @@
 </template>
 
 <script lang="ts">
-export default {
-  name: 'App'
-}
+import {defineComponent, inject, computed} from 'vue';
+import { useRouter } from 'vue-router';
+
+export default defineComponent({
+  name: 'App',
+  
+  setup() {
+    const auth = inject("auth") as { token: { value: string | null },
+    userId: { value: string | null},
+    logout: () => void}
+    const router = useRouter();
+
+    const isLoggedIn = computed(() => !!auth?.token.value);
+
+    const handleLogout = () => {
+      auth?.logout();
+      router.push('/login')
+    };
+    return {
+      isLoggedIn,
+      handleLogout   }
+  }
+})
 </script>
 
 <style>
