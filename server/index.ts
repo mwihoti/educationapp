@@ -159,7 +159,28 @@ app.get('/profile', authenticateToken, async (req: Request, res: Response) => {
             return res.status(404).json({ error: "user not found"})
         } res.json({ profile: user.profile})
     } catch (error) {
+            console.error("Failed to fetch profile", error)
             res.status(500).json({error: "Failed to fetch profile"})
         }
     
+});
+
+app.put('/profile', authenticateToken, async ( req: Request, res: Response) => {
+    try {
+        const { about} = req.body;
+        const users = database.collection("users");
+
+        const result = await users.updateOne(
+            { _id: new ObjectId(( req as any).user.id)},
+            { $set: { "profile.about": about}}
+        );
+
+        if (result.matchedCount === 0) {
+            return res.status(404).json({ error: "User not found"})
+        }
+        res.json({ message: "Profile updated successfully"});
+    } catch (error) {
+        console.error("Error updating profile:", error);
+        res.status(500).json({error: "Failed to update profile"})
+    }
 })
