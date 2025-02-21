@@ -52,8 +52,8 @@ const routes: Array<RouteRecordRaw> =[
   })
 
   router.beforeEach((to, from, next) => {
-    const {token} = useAuth()
-    if ( to.matched.some((record) => record.meta.requiresAuth) && !token) {
+    const auth = useAuth()
+    if ( to.matched.some((record) => record.meta.requiresAuth) && !auth.token.value) {
       next('/login')
     } else {
       next()

@@ -36,7 +36,7 @@ import { useAuth } from '@/contexts/AuthContext';
 export default defineComponent({
     name: 'profileView',
     setup() {
-        const { token } = useAuth();
+        const auth = useAuth();
         const about = ref('');
         const correctAnswers = ref(0);
         const incorrectAnswers = ref(0);
@@ -46,7 +46,7 @@ export default defineComponent({
             try {
                 const response = await fetch(`http://localhost:3000/profile`, {
                     headers: {
-                        'Authorization': `Bearer ${token}`
+                        'Authorization': `Bearer ${auth.token.value}`
                     }
                 });
                 if (!response.ok) {
