@@ -47,17 +47,33 @@
   </template>
   
   <script lang="ts">
-  import { defineComponent, ref, computed } from 'vue';
-  import { questions, Question } from '../data/data';
+  import { defineComponent, ref, computed, onMounted } from 'vue';
+  import { questions, Question } from '@/data/data';
+  import { useAuth } from '@/contexts/AuthContext';
+  import { useRouter } from 'vue-router';
   
   export default defineComponent({
     name: 'LearnMath',
     setup() {
+        const auth = useAuth();
+        const router = useRouter();
         const difficulty = ref<'entry' | 'mid' | 'advanced'>('entry');
         const currentQuestion = ref<Question | null>(null);
         const userAnswer = ref('');
         const feedback = ref('');
         const explanation = ref('');
+        const showExplanation = ref(false);
+        const streakCount = ref(0);
+        const sessionStats = ref({
+          correct: 0,
+          incorrect: 0,
+        });
+
+        const accuracyPercentage = computed(() => {
+          const total = sessionStats.value.correct + sessionStats.value.incorrect;
+          if (total === 0) return 0;
+          return Math.round((sessionStats.value.correct / total) * 100);
+        })
 
         const generateQuestion = () => {
             const filteredQuestions = questions.filter(q => q.difficulty === difficulty.value);
@@ -65,7 +81,23 @@
             userAnswer.value = '';
             feedback.value = '';
             explanation.value = '';
+            showExplanation.value = false;
         };
+        const updateUserProgress = async (correct: boolean) => {
+          try {
+            await fetch(`http://locallhost:3000/update-score`, {
+              method: `PUT`,
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${auth.token.value}`
+              },
+              body: JSON.stringify({ correct })
+            });
+          } catch (error) {
+            console.error('Cannot update user score', error);
+
+          }
+        }
 
         const checkAnswer = () => {
             if (currentQuestion.value) {
@@ -89,7 +121,8 @@
             feedbackClass,
             generateQuestion,
             explanation,
-            feedback
+            feedback,
+            updateUserProgress
         };
     },
     mounted() {
