@@ -11,7 +11,7 @@
     <div class="mb-6">
         <label for="password" class="block text-gray-700 font-bold mb-2">Password</label>
         <input type="password" id="password" v-model="password" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2
-         focus:ring-purple-600" required>
+        focus:ring-purple-600" required>
     </div>
     <button type="submit" class="w-full bg-purple-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-purple-700 transition duration--300
     focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50"> Login</button>
@@ -24,19 +24,43 @@
 </template>
 
 <script lang="ts">
-export default {
+import { defineComponent, ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+export default  defineComponent({
     name: 'LoginVue',
-    data () {
-        return{
-        username: '',
-        password: '',
-    }
-    },
-    methods: {
-        register () {
-            console.log('Login', this.username, this.password)
+    setup() {
+        const username = ref('');
+        const password = ref('');
+        const router = useRouter();
+
+        const handleLogin = async () => {
+            try {
+                const response = await fetch(`http://localhost:3000/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        username: username.value,
+                        password: password.value
+                    })
+                });
+                if (!response.ok)   {
+                    throw new Error('Login failed!')
+                }
+                router.push('/learn');
+            } catch (error) {
+                console.error("Error during login", error);
+            }
         }
+        return {
+            username,
+            password,
+            login: handleLogin
+        }
+
     }
-}
+})
 
 </script>

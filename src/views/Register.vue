@@ -29,7 +29,6 @@
 
 <script lang="ts">
 
-import process from 'process';
 import { defineComponent, ref } from 'vue';
 import { useRouter } from 'vue-router';
 

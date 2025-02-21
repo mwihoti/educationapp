@@ -119,12 +119,12 @@ app.get("/users", async (req: Request, res: Response) => {
 
 app.post('/login', async (req: Request, res: Response) => {
     try {
-        const { email, password } = req.body;
+        const { username, password } = req.body;
         const users = database.collection("users")
 
 
         //Find user
-        const user = await users.findOne({ email })
+        const user = await users.findOne({ username })
         if (!user) {
             return res.status(400).json({ error: "User not found"})
         }
