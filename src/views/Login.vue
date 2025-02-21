@@ -35,32 +35,7 @@ export default  defineComponent({
         const router = useRouter();
         const { login } = useAuth();
 
-        const handleLogin = async () => export default {
-    name: 'ProfileView',
-    data() {
-        return {
-            about: '',
-            correctAnswers: 0,
-            incorrectAnswers: 0,
-            totalQuestions: 0
-        }
-    },
-    methods: {
-        saveProfile() {
-            // Todo to implement save profile logic here
-            console.log('Save profile:', this.about)
-        }
-    },
-    mounted() {
-        // Fetch user profile and progress data
-        // To replace with actual api calls
-        this.about = "I love learning math!"
-        this.correctAnswers = 25
-        this.incorrectAnswers = 5
-        this.totalQuestions = 30
-         
-    }
-}{
+        const handleLogin = async () => {
             try {
                 const response = await fetch(`http://localhost:3000/login`, {
                     method: 'POST',
@@ -81,32 +56,7 @@ export default  defineComponent({
             } catch (error) {
                 console.error("Error during login", error);
             }
-        }export default {
-    name: 'ProfileView',
-    data() {
-        return {
-            about: '',
-            correctAnswers: 0,
-            incorrectAnswers: 0,
-            totalQuestions: 0
         }
-    },
-    methods: {
-        saveProfile() {
-            // Todo to implement save profile logic here
-            console.log('Save profile:', this.about)
-        }
-    },
-    mounted() {
-        // Fetch user profile and progress data
-        // To replace with actual api calls
-        this.about = "I love learning math!"
-        this.correctAnswers = 25
-        this.incorrectAnswers = 5
-        this.totalQuestions = 30
-         
-    }
-}
         return {
             username,
             password,

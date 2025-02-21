@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import express, { type Request, type Response, type NextFunction} from 'express';
+import express, { Request, Response,  NextFunction} from 'express';
 import { MongoClient, type Db, ObjectId } from 'mongodb';
 import cors from 'cors';
 import bcrypt from "bcrypt";
@@ -7,7 +7,7 @@ import jwt from "jsonwebtoken";
 import { error } from 'console';
 
 
-const app = express();
+const app: express.Application = express();
 app.use(cors());
 app.use(express.json())
 
@@ -83,6 +83,11 @@ app.post("/register", async (req: Request, res: Response) => {
         if (existingUser) {
             return res.status(400).json({ error: "User already exists"})
         }
+        // Check if username already exists
+        const existingUsername = await users.findOne({ username});
+        if (existingUsername) {
+            return res.status(400).json({ error: "username already exists"})
+        }
 
         // Hash password
         const hashedPassword = await bcrypt.hash(password, 10);
@@ -135,7 +140,7 @@ app.post('/login', async (req: Request, res: Response) => {
             return res.status(400).json({ error: "Invalid password"})
         }
         // create and assign token
-        const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: "1h"})
+        const token = jwt.sign({ id: user._id, username: user.username }, JWT_SECRET, { expiresIn: "1h"})
         res.status(200).json({ token, userId: user._id,  message: "Logged in successfully"})
 
 

@@ -34,7 +34,7 @@
 import { defineComponent, ref, onMounted } from 'vue';
 import { useAuth } from '@/contexts/AuthContext';
 export default defineComponent({
-    name: 'profileVue',
+    name: 'profileView',
     setup() {
         const { token } = useAuth();
         const about = ref('');
@@ -66,7 +66,7 @@ export default defineComponent({
         const saveProfile = async () => {
             try {
                 const response = await fetch(`http://localhost:3000/login`, {
-                    method: 'POST',
+                    method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${token}`
