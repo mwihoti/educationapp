@@ -155,9 +155,13 @@ app.get('/profile', authenticateToken, async (req: Request, res: Response) => {
     try {
         const users = database.collection("users")
         const user = await users.findOne({ _id: new ObjectId((req as any).user.id) })
+        
         if (!user) {
             return res.status(404).json({ error: "user not found"})
-        } res.json({ profile: user.profile})
+        } res.json({
+            username: user.name,
+            createdAt: user._id.getTimestamp(),
+            profile: user.profile})
     } catch (error) {
             console.error("Failed to fetch profile", error)
             res.status(500).json({error: "Failed to fetch profile"})
@@ -169,6 +173,7 @@ app.put('/profile', authenticateToken, async ( req: Request, res: Response) => {
     try {
         const { about} = req.body;
         const users = database.collection("users");
+       
 
         const result = await users.updateOne(
             { _id: new ObjectId(( req as any).user.id)},
