@@ -113,6 +113,8 @@
             showExplanation.value = true;
             streakCount.value = 0;
             sessionStats.value.incorrect++;
+
+            await generateSimilarQuestion();
           }
 
           // update progress on database
@@ -123,6 +125,29 @@
           setTimeout(() => {
             generateQuestion();
           }, 3000)
+        }
+        const generateSimilarQuestion = async () => {
+          try {
+            const response = await fetch('http://localhost:3000/generate-similar-questions', {
+
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${auth.token.value}`
+              },
+              body: JSON.stringify({
+                originalQuestion: currentQuestion.value,
+                difficulty: difficulty.value
+              })
+            });
+            if (!response.ok) {
+              throw new Error('Failed to generate similar question');
+            }
+            const newQuestion = await response.json();
+            console.log('New similar question generated', newQuestion)
+          } catch (error) {
+            console.error("Error generating error", error)
+          }
         }
         
         const feedbackClass = computed(() => {

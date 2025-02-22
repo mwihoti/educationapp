@@ -79,6 +79,8 @@
       const joinDate = ref<Date | null>(null);
       
       const userInitials = computed(() => {
+        if (!username.value) return '';
+
         return username.value
           .split(' ')
           .map(word => word[0])

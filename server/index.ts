@@ -158,8 +158,9 @@ app.get('/profile', authenticateToken, async (req: Request, res: Response) => {
         
         if (!user) {
             return res.status(404).json({ error: "user not found"})
-        } res.json({
-            username: user.name,
+        } 
+        res.json({
+            username: user.username,
             createdAt: user._id.getTimestamp(),
             profile: user.profile})
     } catch (error) {
