@@ -187,10 +187,16 @@ app.put('/profile', authenticateToken, async ( req: Request, res: Response) => {
 
 app.put("/update-score", authenticateToken, async ( req: Request, res: Response) => {
     try {
-        const { correct } = req.body
+        const { correct } = req.body;
+        // validate the correct answer/parameters
+        if (typeof correct !== 'boolean') {
+            return res.status(400).json({error: "The 'correct' field must be a boolean"});
+        }
         const users =  database.collection("users")
-        await users.updateOne(
-            { _id: new ObjectId((req as any).userId)},
+        const userId = (req as any).user.id;
+
+        const result = await users.updateOne(
+            { _id: new ObjectId(userId)},
             {
                 $inc: {
                     "profile.totalQuestions": 1,
@@ -198,8 +204,11 @@ app.put("/update-score", authenticateToken, async ( req: Request, res: Response)
                     "profile.incorrectAnswers": correct ? 0 : 1 
                 },
             },
-        )
-        res.json({ message: "Score updated successfully"})
+        );
+        if (result.matchedCount === 0) {
+            return res.status(404).json({ error: "User not found"});
+        }
+        res.json({ message: "Score updated successfully", updated: true})
 
     } catch (error) {
         console.error('Failed to update score', error)
