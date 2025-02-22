@@ -5,7 +5,8 @@ import cors from 'cors';
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { error } from 'console';
-
+import { openai} from '@ai-sdk/openai'
+import { questions as initialQuestions } from "../src/data/data"
 
 const app: express.Application = express();
 app.use(cors());
@@ -35,6 +36,16 @@ async function connectToDatabase() {
     } catch (error) {
         console.error("Error connecting to MongoDB:", error);
         process.exit(1); // Exit the process if database connection fails
+    }
+}
+
+async function seedQuestions() {
+    const questionsCollection = database.collection("questions");
+    const count = await questionsCollection.countDocuments()
+
+    if (count === 0) {
+        await questionsCollection.insertMany(initialQuestions)
+        console.log("Initial questions seeded.")
     }
 }
 
