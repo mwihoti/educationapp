@@ -31,7 +31,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted } from 'vue';
+import { defineComponent, ref, onMounted, onBeforeMount, computed } from 'vue';
 import { useAuth } from '@/contexts/AuthContext';
 export default defineComponent({
     name: 'profileView',
@@ -41,10 +41,17 @@ export default defineComponent({
         const correctAnswers = ref(0);
         const incorrectAnswers = ref(0);
         const totalQuestions = ref(0);
+        const lastUpdated = ref<Date | null>(null);
+        const refreshInterval = ref<number | null>(null);
+
+        const formattedLastUpdate = computed (() => {
+            if (!lastUpdated.value) return '';
+            return lastUpdated.value.toLocaleTimeString();
+        });
 
         const fetchProfile = async () => {
             try {
-                const response = await fetch(`http://localhost:3000/profile`, {
+                const response = await fetch('http://localhost:3000/profile', {
                     headers: {
                         'Authorization': `Bearer ${auth.token.value}`
                     }
@@ -57,6 +64,7 @@ export default defineComponent({
                 correctAnswers.value = data.profile.correctAnswers;
                 incorrectAnswers.value = data.profile.incorrectAnswers;
                 totalQuestions.value = data.profile.totalQuestions;
+                lastUpdated.value = new Date ();
             }
             catch (error) {
                 console.error('Failed to fetch profile', error)
@@ -81,14 +89,43 @@ export default defineComponent({
                 console.error('Error updating profile!', error)
             }
         };
-        onMounted(fetchProfile);
+        // Start automatic refresh when components mounts.
+        onMounted(() => {
+            fetchProfile();
+
+            // Set up periodic refresh (every 5 seconds)
+            refreshInterval.value = window.setInterval(() => {
+                fetchProfile();
+            }, 5000);
+
+            // Add visibility change event listeners
+            document.addEventListener('visibilityChange', handleVisibilityChange);
+    });
+    // Clean up     when components unmounts
+    onBeforeMount(() => {
+        if (refreshInterval.value) {
+            clearInterval(refreshInterval.value)
+        }
+        document.removeEventListener('visibilityChange', handleVisibilityChange);
+
+    })
+
+    // Refresh when tab becomes visible again
+    const handleVisibilityChange = () => {
+        if (document.visibilityState === 'visible') {
+            fetchProfile()
+        }
+    }
 
         return {
             about,
             correctAnswers,
             incorrectAnswers,
             totalQuestions,
-            saveProfile
+            saveProfile,
+            lastUpdated,
+            formattedLastUpdate
+
         }
     }
 })

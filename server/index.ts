@@ -184,3 +184,25 @@ app.put('/profile', authenticateToken, async ( req: Request, res: Response) => {
         res.status(500).json({error: "Failed to update profile"})
     }
 })
+
+app.put("/update-score", authenticateToken, async ( req: Request, res: Response) => {
+    try {
+        const { correct } = req.body
+        const users =  database.collection("users")
+        await users.updateOne(
+            { _id: new ObjectId((req as any).userId)},
+            {
+                $inc: {
+                    "profile.totalQuestions": 1,
+                    "profile.correctAnswers": correct ? 1 : 0,
+                    "profile.incorrectAnswers": correct ? 0 : 1 
+                },
+            },
+        )
+        res.json({ message: "Score updated successfully"})
+
+    } catch (error) {
+        console.error('Failed to update score', error)
+        res.status(500).json({ error: "Failed to update score"})
+    }
+})

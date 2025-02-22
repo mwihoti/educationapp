@@ -85,7 +85,7 @@
         };
         const updateUserProgress = async (correct: boolean) => {
           try {
-            await fetch(`http://locallhost:3000/update-score`, {
+            await fetch('http://localhost:3000/update-score', {
               method: `PUT`,
               headers: {
                 'Content-Type': 'application/json',
@@ -93,26 +93,48 @@
               },
               body: JSON.stringify({ correct })
             });
+            console.log('score updated')
           } catch (error) {
             console.error('Cannot update user score', error);
 
           }
         }
+        const checkAnswer = async () => {
+          if (!currentQuestion.value) return;
 
-        const checkAnswer = () => {
-            if (currentQuestion.value) {
-                if (userAnswer.value.trim().toLocaleLowerCase() === currentQuestion.value.answer.toLowerCase()) {
-                    feedback.value = "Correct! You are a math wizard! 🎉";
-                    explanation.value = currentQuestion.value.explanation;
-                } else {
-                    feedback.value = "Oops! That's not quite right. Give it another try! 💪";
-                    explanation.value = '';
-                }
-            }
-        };
+          const isCorrect = userAnswer.value.trim().toLowerCase() === currentQuestion.value.answer.toLowerCase();
+          if (isCorrect) {
+            feedback.value ="Correct! You're a math wizard! 🎉";
+            showExplanation.value = true;
+            streakCount.value++;
+            sessionStats.value.correct++;
+          } else {
+            feedback.value = "Ooops! That's not quite right. Give it another try! 💪";
+            showExplanation.value = true;
+            streakCount.value = 0;
+            sessionStats.value.incorrect++;
+          }
+
+          // update progress on database
+          await updateUserProgress(isCorrect)
+
+
+          // Generate a new question after a delay
+          setTimeout(() => {
+            generateQuestion();
+          }, 3000)
+        }
+        
         const feedbackClass = computed(() => {
             return feedback.value.includes('correct') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800';
         } );
+        onMounted(() => {
+          if (!auth) {
+            router.push('/login');
+            return
+          }
+          generateQuestion();
+        })
         return {
             difficulty,
             currentQuestion,
@@ -122,12 +144,11 @@
             generateQuestion,
             explanation,
             feedback,
-            updateUserProgress
+            updateUserProgress,
+            accuracyPercentage
         };
     },
-    mounted() {
-        this.generateQuestion();
-    }
+   
 
   });
   </script>
