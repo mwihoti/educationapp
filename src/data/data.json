@@ -436,5 +436,72 @@
     "createdAt": "2025-02-23T15:53:00.120Z",
     "id": "e6741750-3d5e-432e-8fa2-3a33ea94f42c",
     "_id": "67bb445c6193846d2acd353f"
+  },
+  {
+    "question": "What is 6 + 9?",
+    "answer": "15",
+    "steps": [
+      "Original Question: 7 + 8",
+      "Step 1: Start with the number 7.",
+      "Step 2: Count forward 8 more numbers: 8, 9, 10, 11, 12, 13, 14, 15.",
+      "Step 3: The final number you counted is the answer: 15.",
+      "New Question: 6 + 9",
+      "Step 1: Start with the number 6.",
+      "Step 2: Count forward 9 more numbers: 7, 8, 9, 10, 11, 12, 13, 14, 15.",
+      "Step 3: The final number you counted is the answer: 15."
+    ],
+    "concepts": [
+      "Addition represents combining two or more quantities.",
+      "Counting is a fundamental skill for addition.",
+      "Understanding the '+' symbol means 'add' or 'plus'."
+    ],
+    "mistakes": [
+      "Confusing addition with subtraction.",
+      "Not counting accurately.",
+      "Misinterpreting the meaning of the '+' symbol."
+    ],
+    "difficulty": "entry",
+    "generatedFrom": {
+      "difficulty": "entry",
+      "question": "What is 7 + 8?",
+      "answer": "15",
+      "explanation": "You can break 8 into 3 and 5. Add 3 to 7 to get 10, then add the remaining 5 to get 15."
+    },
+    "createdAt": "2025-02-23T18:35:58.710Z",
+    "id": "5ea024f2-fac5-4be8-bd72-8edd42596ce8",
+    "_id": "67bb6a8e6193846d2acd3540"
+  },
+  {
+    "question": "What is 6 + 9?",
+    "answer": "15",
+    "steps": [
+      "Original Question: 7 + 8",
+      "Step 1: Start with the number 7.",
+      "Step 2: Count forward 8 more numbers (8, 9, 10, 11, 12, 13, 14, 15).",
+      "Step 3: The number you land on is the answer: 15.",
+      "New Question: 6 + 9",
+      "Step 1: Start with the number 6.",
+      "Step 2: Count forward 9 more numbers (7, 8, 9, 10, 11, 12, 13, 14, 15).",
+      "Step 3: The number you land on is the answer: 15."
+    ],
+    "concepts": [
+      "Addition is the process of combining two or more numbers to find their total.",
+      "Counting forward is a strategy to perform addition with small numbers."
+    ],
+    "mistakes": [
+      "Miscounting while adding.",
+      "Starting the count from the wrong number (e.g., counting 8, 9, 10... instead of 7 when adding 7 and 1).",
+      "Confusing addition with subtraction."
+    ],
+    "difficulty": "entry",
+    "generatedFrom": {
+      "difficulty": "entry",
+      "question": "What is 7 + 8?",
+      "answer": "15",
+      "explanation": "You can break 8 into 3 and 5. Add 3 to 7 to get 10, then add the remaining 5 to get 15."
+    },
+    "createdAt": "2025-02-23T18:36:58.292Z",
+    "id": "dc4c65fe-8cce-4b27-bf0b-f06a2feb249f",
+    "_id": "67bb6aca6193846d2acd3541"
   }
 ]
