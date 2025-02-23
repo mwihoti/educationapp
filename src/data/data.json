@@ -146,5 +146,295 @@
     "createdAt": "2025-02-23T15:14:32.855Z",
     "id": "eab7ff36-2e64-4794-a613-f09d89dead39",
     "_id": "67bb3b586193846d2acd353a"
+  },
+  {
+    "question": "What is 3 × 4?",
+    "answer": "12",
+    "steps": [
+      "Original Question: 2 × 6 means adding 2 together 6 times.",
+      "So, 2 + 2 + 2 + 2 + 2 + 2 = 12",
+      "New Question: 3 × 4 means adding 3 together 4 times.",
+      "So, 3 + 3 + 3 + 3 = 12"
+    ],
+    "concepts": [
+      "Multiplication represents repeated addition.",
+      "The symbol '×' means 'times' or 'multiplied by'."
+    ],
+    "mistakes": [
+      "Confusing multiplication with addition (e.g., thinking 2 × 6 is 2 + 6).",
+      "Not understanding the concept of repeated addition."
+    ],
+    "difficulty": "entry",
+    "generatedFrom": {
+      "difficulty": "entry",
+      "question": "What is 2 × 6?",
+      "answer": "12",
+      "explanation": "2 × 6 means 2 groups of 6. You can count: 6, 12."
+    },
+    "createdAt": "2025-02-23T15:43:21.296Z",
+    "id": "a364cd0d-8c72-4b49-9215-db70192d765b",
+    "_id": "67bb42196193846d2acd353b"
+  },
+  {
+    "question": "What is 2 × 5?",
+    "answer": "10",
+    "steps": [
+      "Original Question: 3 × 4 means adding 3 together 4 times: 3 + 3 + 3 + 3",
+      "Calculate the sum: 3 + 3 + 3 + 3 = 12",
+      "New Question: 2 × 5 means adding 2 together 5 times: 2 + 2 + 2 + 2 + 2",
+      "Calculate the sum: 2 + 2 + 2 + 2 + 2 = 10"
+    ],
+    "concepts": [
+      "Multiplication represents repeated addition.",
+      "The multiplication symbol '×' means 'times'.",
+      "a × b means adding 'a' together 'b' times."
+    ],
+    "mistakes": [
+      "Confusing multiplication with addition (e.g., thinking 3 × 4 = 3 + 4 = 7).",
+      "Not understanding the concept of repeated addition.",
+      "Miscounting the number of times a number is added."
+    ],
+    "difficulty": "entry",
+    "generatedFrom": {
+      "question": "What is 3 × 4?",
+      "answer": "12",
+      "steps": [
+        "Original Question: 2 × 6 means adding 2 together 6 times.",
+        "So, 2 + 2 + 2 + 2 + 2 + 2 = 12",
+        "New Question: 3 × 4 means adding 3 together 4 times.",
+        "So, 3 + 3 + 3 + 3 = 12"
+      ],
+      "concepts": [
+        "Multiplication represents repeated addition.",
+        "The symbol '×' means 'times' or 'multiplied by'."
+      ],
+      "mistakes": [
+        "Confusing multiplication with addition (e.g., thinking 2 × 6 is 2 + 6).",
+        "Not understanding the concept of repeated addition."
+      ],
+      "difficulty": "entry",
+      "generatedFrom": {
+        "difficulty": "entry",
+        "question": "What is 2 × 6?",
+        "answer": "12",
+        "explanation": "2 × 6 means 2 groups of 6. You can count: 6, 12."
+      },
+      "createdAt": "2025-02-23T15:43:21.296Z",
+      "id": "a364cd0d-8c72-4b49-9215-db70192d765b",
+      "_id": "67bb42196193846d2acd353b"
+    },
+    "createdAt": "2025-02-23T15:43:37.878Z",
+    "id": "631a2e11-178b-4761-b835-3ffe718633f4",
+    "_id": "67bb42296193846d2acd353c"
+  },
+  {
+    "question": "What is 4 × 2?",
+    "answer": "8",
+    "steps": [
+      "Original Question: 2 × 5 means adding the number 2 five times.",
+      "2 + 2 + 2 + 2 + 2 = 10",
+      "New Question: 4 × 2 means adding the number 4 two times.",
+      "4 + 4 = 8"
+    ],
+    "concepts": [
+      "Multiplication represents repeated addition.",
+      "The '×' symbol means 'times' or 'multiplied by'."
+    ],
+    "mistakes": [
+      "Confusing multiplication with addition (e.g., thinking 2 × 5 = 7 instead of 10).",
+      "Not understanding the concept of repeated addition."
+    ],
+    "difficulty": "entry",
+    "generatedFrom": {
+      "question": "What is 2 × 5?",
+      "answer": "10",
+      "steps": [
+        "Original Question: 3 × 4 means adding 3 together 4 times: 3 + 3 + 3 + 3",
+        "Calculate the sum: 3 + 3 + 3 + 3 = 12",
+        "New Question: 2 × 5 means adding 2 together 5 times: 2 + 2 + 2 + 2 + 2",
+        "Calculate the sum: 2 + 2 + 2 + 2 + 2 = 10"
+      ],
+      "concepts": [
+        "Multiplication represents repeated addition.",
+        "The multiplication symbol '×' means 'times'.",
+        "a × b means adding 'a' together 'b' times."
+      ],
+      "mistakes": [
+        "Confusing multiplication with addition (e.g., thinking 3 × 4 = 3 + 4 = 7).",
+        "Not understanding the concept of repeated addition.",
+        "Miscounting the number of times a number is added."
+      ],
+      "difficulty": "entry",
+      "generatedFrom": {
+        "question": "What is 3 × 4?",
+        "answer": "12",
+        "steps": [
+          "Original Question: 2 × 6 means adding 2 together 6 times.",
+          "So, 2 + 2 + 2 + 2 + 2 + 2 = 12",
+          "New Question: 3 × 4 means adding 3 together 4 times.",
+          "So, 3 + 3 + 3 + 3 = 12"
+        ],
+        "concepts": [
+          "Multiplication represents repeated addition.",
+          "The symbol '×' means 'times' or 'multiplied by'."
+        ],
+        "mistakes": [
+          "Confusing multiplication with addition (e.g., thinking 2 × 6 is 2 + 6).",
+          "Not understanding the concept of repeated addition."
+        ],
+        "difficulty": "entry",
+        "generatedFrom": {
+          "difficulty": "entry",
+          "question": "What is 2 × 6?",
+          "answer": "12",
+          "explanation": "2 × 6 means 2 groups of 6. You can count: 6, 12."
+        },
+        "createdAt": "2025-02-23T15:43:21.296Z",
+        "id": "a364cd0d-8c72-4b49-9215-db70192d765b",
+        "_id": "67bb42196193846d2acd353b"
+      },
+      "createdAt": "2025-02-23T15:43:37.878Z",
+      "id": "631a2e11-178b-4761-b835-3ffe718633f4",
+      "_id": "67bb42296193846d2acd353c"
+    },
+    "createdAt": "2025-02-23T15:43:53.866Z",
+    "id": "fcc412ee-7809-4b8a-9459-0692bb2b668d",
+    "_id": "67bb42396193846d2acd353d"
+  },
+  {
+    "question": "What is 2 × 3?",
+    "answer": "6",
+    "steps": [
+      "Original Question: 4 × 2 means adding 2 four times.",
+      "Think of it as: 2 + 2 + 2 + 2",
+      "Calculate: 2 + 2 = 4, 4 + 2 = 6, 6 + 2 = 8",
+      "So, 4 × 2 = 8",
+      "New Question: 2 × 3 means adding 3 two times.",
+      "Think of it as: 3 + 3",
+      "Calculate: 3 + 3 = 6",
+      "So, 2 × 3 = 6"
+    ],
+    "concepts": [
+      "Multiplication represents repeated addition.",
+      "The multiplication symbol '×' means 'times' or 'groups of'.",
+      "a × b means adding 'b' 'a' times."
+    ],
+    "mistakes": [
+      "Confusing multiplication with addition (e.g., thinking 4 × 2 is 4 + 2).",
+      "Not understanding the concept of repeated addition.",
+      "Skipping steps and trying to guess the answer."
+    ],
+    "difficulty": "entry",
+    "generatedFrom": {
+      "question": "What is 4 × 2?",
+      "answer": "8",
+      "steps": [
+        "Original Question: 2 × 5 means adding the number 2 five times.",
+        "2 + 2 + 2 + 2 + 2 = 10",
+        "New Question: 4 × 2 means adding the number 4 two times.",
+        "4 + 4 = 8"
+      ],
+      "concepts": [
+        "Multiplication represents repeated addition.",
+        "The '×' symbol means 'times' or 'multiplied by'."
+      ],
+      "mistakes": [
+        "Confusing multiplication with addition (e.g., thinking 2 × 5 = 7 instead of 10).",
+        "Not understanding the concept of repeated addition."
+      ],
+      "difficulty": "entry",
+      "generatedFrom": {
+        "question": "What is 2 × 5?",
+        "answer": "10",
+        "steps": [
+          "Original Question: 3 × 4 means adding 3 together 4 times: 3 + 3 + 3 + 3",
+          "Calculate the sum: 3 + 3 + 3 + 3 = 12",
+          "New Question: 2 × 5 means adding 2 together 5 times: 2 + 2 + 2 + 2 + 2",
+          "Calculate the sum: 2 + 2 + 2 + 2 + 2 = 10"
+        ],
+        "concepts": [
+          "Multiplication represents repeated addition.",
+          "The multiplication symbol '×' means 'times'.",
+          "a × b means adding 'a' together 'b' times."
+        ],
+        "mistakes": [
+          "Confusing multiplication with addition (e.g., thinking 3 × 4 = 3 + 4 = 7).",
+          "Not understanding the concept of repeated addition.",
+          "Miscounting the number of times a number is added."
+        ],
+        "difficulty": "entry",
+        "generatedFrom": {
+          "question": "What is 3 × 4?",
+          "answer": "12",
+          "steps": [
+            "Original Question: 2 × 6 means adding 2 together 6 times.",
+            "So, 2 + 2 + 2 + 2 + 2 + 2 = 12",
+            "New Question: 3 × 4 means adding 3 together 4 times.",
+            "So, 3 + 3 + 3 + 3 = 12"
+          ],
+          "concepts": [
+            "Multiplication represents repeated addition.",
+            "The symbol '×' means 'times' or 'multiplied by'."
+          ],
+          "mistakes": [
+            "Confusing multiplication with addition (e.g., thinking 2 × 6 is 2 + 6).",
+            "Not understanding the concept of repeated addition."
+          ],
+          "difficulty": "entry",
+          "generatedFrom": {
+            "difficulty": "entry",
+            "question": "What is 2 × 6?",
+            "answer": "12",
+            "explanation": "2 × 6 means 2 groups of 6. You can count: 6, 12."
+          },
+          "createdAt": "2025-02-23T15:43:21.296Z",
+          "id": "a364cd0d-8c72-4b49-9215-db70192d765b",
+          "_id": "67bb42196193846d2acd353b"
+        },
+        "createdAt": "2025-02-23T15:43:37.878Z",
+        "id": "631a2e11-178b-4761-b835-3ffe718633f4",
+        "_id": "67bb42296193846d2acd353c"
+      },
+      "createdAt": "2025-02-23T15:43:53.866Z",
+      "id": "fcc412ee-7809-4b8a-9459-0692bb2b668d",
+      "_id": "67bb42396193846d2acd353d"
+    },
+    "createdAt": "2025-02-23T15:44:23.492Z",
+    "id": "147cce6f-c478-4422-9a37-f00149015eca",
+    "_id": "67bb42576193846d2acd353e"
+  },
+  {
+    "question": "What is 6 + 9?",
+    "answer": "15",
+    "steps": [
+      "Original Question: 7 + 8",
+      "Step 1: Start with the larger number, 8.",
+      "Step 2: Count up 7 more.  (9, 10, 11, 12, 13, 14, 15)",
+      "Step 3: The answer is 15.",
+      "New Question: 6 + 9",
+      "Step 1: Start with the larger number, 9.",
+      "Step 2: Count up 6 more. (10, 11, 12, 13, 14, 15)",
+      "Step 3: The answer is 15."
+    ],
+    "concepts": [
+      "Addition means combining two or more numbers to find a total.",
+      "Counting up is a strategy for adding small numbers.",
+      "Starting with the larger number can make counting up easier."
+    ],
+    "mistakes": [
+      "Not counting accurately. Carefully count each number.",
+      "Skipping numbers when counting.  Make sure to count each number in order.",
+      "Remembering addition facts incorrectly. Practice addition facts regularly."
+    ],
+    "difficulty": "entry",
+    "generatedFrom": {
+      "difficulty": "entry",
+      "question": "What is 7 + 8?",
+      "answer": "15",
+      "explanation": "You can break 8 into 3 and 5. Add 3 to 7 to get 10, then add the remaining 5 to get 15."
+    },
+    "createdAt": "2025-02-23T15:53:00.120Z",
+    "id": "e6741750-3d5e-432e-8fa2-3a33ea94f42c",
+    "_id": "67bb445c6193846d2acd353f"
   }
 ]

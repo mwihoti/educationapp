@@ -39,6 +39,9 @@
             New Question
           </button>
         </div>
+        <button @click="simulateIncorrectAnswer" class="mt-4 bg-yellow-500 text-white font-bold py-3 px-6 rounded-full hover:bg-yellow-600 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+        Simulate Incorrect Answer
+      </button>
       </div>
       <div v-else key="loading" class="text-center text-white text-2xl">
         Loading question...
@@ -48,6 +51,9 @@
     <transition name="bounce">
       <div v-if="feedback" :class="['p-6 rounded-lg mb-6 text-center text-xl font-bold', feedbackClass]">
         {{ feedback }}
+        <div v-if="streakCount > 1" class="mt-2 text-lg">
+        🔥 {{ streakCount }} Question Streak! Keep going!
+      </div>
       </div>
     </transition>
 
@@ -57,6 +63,12 @@
         <p class="text-yellow-800 text-lg">{{ explanation }}</p>
       </div>
     </transition>
+    <transition name="slide-fade">
+    <div v-if="showExplanation" class="bg-yellow-100 p-6 rounded-lg mb-6">
+      <p class="font-bold text-yellow-800 mb-2 text-lg">Explanation:</p>
+      <p class="text-yellow-800 text-lg">{{ currentQuestion?.explanation }}</p>
+    </div>
+  </transition>
 
     <!-- New section for similar question and guidance -->
     <transition name="slide-fade">
@@ -97,6 +109,23 @@
         </button>
       </div>
     </transition>
+    <div class="mt-8 bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-6">
+    <h3 class="text-xl font-bold mb-4 text-white">Session Progress</h3>
+    <div class="grid grid-cols-3 gap-4">
+      <div class="bg-white bg-opacity-90 rounded-lg p-4 text-center">
+        <p class="text-2xl font-bold text-green-600">{{ sessionStats.correct }}</p>
+        <p class="text-sm text-gray-600">Correct</p>
+      </div>
+      <div class="bg-white bg-opacity-90 rounded-lg p-4 text-center">
+        <p class="text-2xl font-bold text-red-600">{{ sessionStats.incorrect }}</p>
+        <p class="text-sm text-gray-600">Incorrect</p>
+      </div>
+      <div class="bg-white bg-opacity-90 rounded-lg p-4 text-center">
+        <p class="text-2xl font-bold text-blue-600">{{ accuracyPercentage }}%</p>
+        <p class="text-sm text-gray-600">Accuracy</p>
+      </div>
+    </div>
+  </div>
   </div>
 </template>
 
@@ -148,6 +177,7 @@ export default defineComponent({
       guidanceSteps.value = [];
       keyConcepts.value = [];
     };
+
 
     const generateSimilarQuestion = async () => {
       isLoading.value = true;
@@ -243,6 +273,40 @@ export default defineComponent({
         ? 'bg-green-100 text-green-800'
         : 'bg-red-100 text-red-800';
     });
+    const simulateIncorrectAnswer = async () => {
+      if (!currentQuestion.value) return;
+
+      try {
+        const response = await fetch('http://localhost:3000/generate-similar-questions', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${auth.token.value}`
+          },
+          body: JSON.stringify({
+            originalQuestion: currentQuestion.value,
+            difficulty: difficulty.value,
+            userAnswer: 'Simulated incorrect answer'
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to generate similar question');
+        }
+
+        const newQuestion = await response.json();
+        console.log('New similar question generated:', newQuestion);
+        
+        // Update the current question with the new one
+        currentQuestion.value = newQuestion;
+        userAnswer.value = '';
+        feedback.value = 'New question generated based on the previous one!';
+        showExplanation.value = false;
+      } catch (error) {
+        console.error('Error simulating incorrect answer:', error);
+        feedback.value = 'Error generating new question. Please try again.';
+      }
+    };
 
     onMounted(() => {
       if (!auth) {
@@ -267,7 +331,9 @@ export default defineComponent({
       feedbackClass,
       generateQuestion,
       accuracyPercentage,
-      isLoading
+      isLoading,
+      sessionStats,
+      simulateIncorrectAnswer
     };
   },
 });
