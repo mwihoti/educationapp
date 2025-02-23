@@ -5,8 +5,8 @@ import cors from 'cors';
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { error } from 'console';
-import { openai} from '@ai-sdk/openai';
-import { generateText } from 'ai'
+import { GoogleGenerativeAI } from "@google/generative-ai"
+
 import { questions as initialQuestions, Question } from "../src/data/data"
 
 const app: express.Application = express();
@@ -16,7 +16,7 @@ app.use(express.json())
 const PORT = process.env.PORT||3000
 const CONNECTION = process.env.DB_URI;
 const JWT_SECRET = process.env.JWT_SECRET;
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY
 
 const databaseName = "testApp";
 
@@ -27,15 +27,15 @@ if (!CONNECTION) {
 if (!JWT_SECRET) {
     throw new Error("JWT_SECRET is not defined in enviroment variable")
 }
-if (!OPENAI_API_KEY) {
+if (!GEMINI_API_KEY) {
     throw new Error("OPENAI_API_KEY is not defined in enviroment variable")
 }
 
 let database: Db;
 
-const openaiConfig = openai({
-    apiKey: OPENAI_API_KEY
-})
+const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
+const model = genAI.getGenerativeModel({  model: "gemini-1.5-pro" })
+
 async function connectToDatabase() {
     try {
         const client = await MongoClient.connect(CONNECTION);
@@ -241,43 +241,121 @@ app.put("/update-score", authenticateToken, async ( req: Request, res: Response)
     }
 })
 
-app.post("/generate-similar-question", authenticateToken, async (req: Request, res: Response) => {
-    try {
-        const { originalQuestion, difficulty} = req.body;
-        const prompt = ` Generate a math question similar to this one, but with different numbers or slight variations.
-        Keep the same difficult levele {${difficulty}} and format:
-
-        Original question: ${originalQuestion.question}
-        Original answer: ${originalQuestion.answer}
-        Original explanation: ${originalQuestion.explanation}
-
-        New question:
-        `
-        const { text } = await generateText({
-            model: openaiConfig("gpt-4o"),
-            prompt: prompt
-        });
-
-        const newQuestion = parseGenerateQuestion(text);
-        const questionCollection = database.collection("questions")
-        await questionCollection.insertOne(newQuestion)
-
-        res.json(newQuestion)
-
-    } catch (error) {
-        console.error("Error generating similar question", error)
-        res.status(500).json({ error: "Failed to generate similar question"})
-    }
-})
-
-function parseGenerateQuestion(text: string): Question {
-    // Implement parsing logic here to extract question answer and explanation
-    const lines = text.split("\n")
+// Function to parse the generated question
+function parseGeneratedQuestion(text: string) {
+    // Implement your parsing logic here based on the expected format of the generated text
+    // This is a placeholder, replace with actual parsing
     return {
-        difficulty: "entry",
-        question: lines[0],
-        answer: lines[1].split(": ")[1],
-        explanation: lines[2].split(": ")[1]
+      question: text,
+      answer: "Parsed Answer",
+      explanation: "Parsed Explanation",
     }
-}
-
+  }
+  
+ // Helper function to clean and parse JSON response
+function cleanAndParseJSON(text: string): any {
+    try {
+      // Remove any prefixes like "json" or whitespace
+      const cleanedText = text.replace(/^(?:json\s*)?/, "").trim()
+  
+      // Remove any backticks or other extraneous characters
+      const sanitizedText = cleanedText.replace(/^```json\s*|\s*```$/g, "")
+  
+      return JSON.parse(sanitizedText)
+    } catch (error) {
+      console.error("Error parsing JSON:", error)
+      throw new Error("Invalid JSON format in response")
+    }
+  }
+  
+  // Modified generate-similar-questions endpoint
+  app.post("/generate-similar-questions", authenticateToken, async (req: Request, res: Response) => {
+    try {
+      const { originalQuestion, difficulty, userAnswer } = req.body
+  
+      // Validate input
+      if (!originalQuestion || !difficulty) {
+        return res.status(400).json({
+          error: "Missing required fields: originalQuestion and difficulty",
+        })
+      }
+  
+      const prompt = `As a math tutor, help a student understand this concept better.
+        Original question: ${originalQuestion.question}
+        Student's answer: ${userAnswer}
+        Correct answer: ${originalQuestion.answer}
+        Difficulty level: ${difficulty}
+  
+        Please provide:
+        1. A similar question that helps reinforce the same concept
+        2. Step-by-step guidance on how to solve both the original and new question
+        3. Key concepts the student should understand
+        4. Common mistakes to avoid
+  
+        Format the response EXACTLY as a JSON object with the following structure:
+        {
+          "question": "new similar question",
+          "answer": "correct answer",
+          "steps": ["step 1", "step 2"],
+          "concepts": ["concept 1", "concept 2"],
+          "mistakes": ["mistake 1", "mistake 2"]
+        }
+  
+        Do not include any additional text or formatting outside of this JSON structure.`
+  
+      const result = await model.generateContent(prompt)
+      const generatedContent = result.response.text()
+  
+      // Clean and parse the response
+      const parsedResponse = cleanAndParseJSON(generatedContent)
+  
+      // Store the new question in the database
+      const questionsCollection = database.collection("questions")
+      await questionsCollection.insertOne({
+        ...parsedResponse,
+        difficulty,
+        generatedFrom: originalQuestion,
+        createdAt: new Date(),
+      })
+  
+      res.json(parsedResponse)
+    } catch (error) {
+      console.error("Error generating similar question:", error)
+      res.status(500).json({
+        error: "Failed to generate similar question",
+        details: error.message,
+      })
+    }
+  })
+  
+  app.post("/generate-similar-question", authenticateToken, async (req: Request, res: Response) => {
+    try {
+      const { originalQuestion, difficulty } = req.body
+  
+      const prompt = `Generate a math question similar to this one, but with different numbers or slight variations. Keep the same difficulty level (${difficulty}) and format:
+  
+  Original question: ${originalQuestion.question}
+  Original answer: ${originalQuestion.answer}
+  Original explanation: ${originalQuestion.explanation}
+  
+  New question:`
+  
+      
+    const result = await model.generateContent(prompt)
+    const generatedContent = result.response.text()
+  
+      // Parse the generated text into a question object
+      const newQuestion = parseGeneratedQuestion(generatedContent)
+  
+      // Save the new question to the database
+      const questionsCollection = database.collection("questions")
+      await questionsCollection.insertOne(newQuestion)
+  
+      res.json(newQuestion)
+    } catch (error) {
+      console.error("Error generating similar question:", error)
+      res.status(500).json({ error: "Failed to generate similar question" })
+    }
+  })
+  
+  export { database }

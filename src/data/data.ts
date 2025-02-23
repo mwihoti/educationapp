@@ -3,6 +3,10 @@ export interface Question {
     question: string
     answer: string
     explanation: string
+    generatedFrom?: string
+    steps?: string[]
+    concepts?: string[]
+    mistakes?: string[]
 }
 
 export const questions: Question[] = [
