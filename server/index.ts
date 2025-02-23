@@ -5,8 +5,9 @@ import cors from 'cors';
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { error } from 'console';
-import { openai} from '@ai-sdk/openai'
-import { questions as initialQuestions } from "../src/data/data"
+import { openai} from '@ai-sdk/openai';
+import { generateText } from 'ai'
+import { questions as initialQuestions, Question } from "../src/data/data"
 
 const app: express.Application = express();
 app.use(cors());
@@ -232,3 +233,44 @@ app.put("/update-score", authenticateToken, async ( req: Request, res: Response)
         res.status(500).json({ error: "Failed to update score"})
     }
 })
+
+app.post("/generate-similar-question", authenticateToken, async (req: Request, res: Response) => {
+    try {
+        const { originalQuestion, difficulty} = req.body;
+        const prompt = ` Generate a math question similar to this one, but with different numbers or slight variations.
+        Keep the same difficult levele {${difficulty}} and format:
+
+        Original question: ${originalQuestion.question}
+        Original answer: ${originalQuestion.answer}
+        Original explanation: ${originalQuestion.explanation}
+
+        New question:
+        `
+        const { text } = await generateText({
+            model: openai("gpt-4o"),
+            prompt: prompt
+        });
+
+        const newQuestion = parseGenerateQuestion(text);
+        const questionCollection = database.collection("questions")
+        await questionCollection.insertOne(newQuestion)
+
+        res.json(newQuestion)
+
+    } catch (error) {
+        console.error("Error generating similar question", error)
+        res.status(500).json({ error: "Failed to generate similar question"})
+    }
+})
+
+function parseGenerateQuestion(text: string): Question {
+    // Implement parsing logic here to extract question answer and explanation
+    const lines = text.split("\n")
+    return {
+        difficulty: "entry",
+        question: lines[0],
+        answer: lines[1].split(": ")[1],
+        explanation: lines[2].split(": ")[1]
+    }
+}
+

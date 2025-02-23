@@ -17,6 +17,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^1.1.13",
+    "ai": "^4.1.45",
     "autoprefixer": "^10.4.20",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
