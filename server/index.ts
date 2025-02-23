@@ -16,6 +16,7 @@ app.use(express.json())
 const PORT = process.env.PORT||3000
 const CONNECTION = process.env.DB_URI;
 const JWT_SECRET = process.env.JWT_SECRET;
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
 const databaseName = "testApp";
 
@@ -25,6 +26,9 @@ if (!CONNECTION) {
 
 if (!JWT_SECRET) {
     throw new Error("JWT_SECRET is not defined in enviroment variable")
+}
+if (!OPENAI_API_KEY) {
+    throw new Error("OPENAI_API_KEY is not defined in enviroment variable")
 }
 
 let database: Db;
