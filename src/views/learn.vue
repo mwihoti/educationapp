@@ -64,7 +64,7 @@
       </div>
     </transition>
     <transition name="slide-fade">
-    <div v-if="showExplanation" class="bg-yellow-100 p-6 rounded-lg mb-6">
+    <div v-if="explanation" class="bg-yellow-100 p-6 rounded-lg mb-6">
       <p class="font-bold text-yellow-800 mb-2 text-lg">Explanation:</p>
       <p class="text-yellow-800 text-lg">{{ currentQuestion?.explanation }}</p>
     </div>
@@ -333,7 +333,8 @@ export default defineComponent({
       accuracyPercentage,
       isLoading,
       sessionStats,
-      simulateIncorrectAnswer
+      simulateIncorrectAnswer,
+      streakCount
     };
   },
 });
