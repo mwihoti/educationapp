@@ -33,6 +33,9 @@ if (!OPENAI_API_KEY) {
 
 let database: Db;
 
+const openaiConfig = openai({
+    apiKey: OPENAI_API_KEY
+})
 async function connectToDatabase() {
     try {
         const client = await MongoClient.connect(CONNECTION);
@@ -251,7 +254,7 @@ app.post("/generate-similar-question", authenticateToken, async (req: Request, r
         New question:
         `
         const { text } = await generateText({
-            model: openai("gpt-4o"),
+            model: openaiConfig("gpt-4o"),
             prompt: prompt
         });
 
