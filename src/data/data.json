@@ -1,0 +1,150 @@
+[
+  {
+    "question": "What is 5 × 2?",
+    "answer": "10",
+    "steps": [
+      "Original Question: 2 × 6 means adding the number 2 six times: 2 + 2 + 2 + 2 + 2 + 2",
+      "Calculate the sum: 2 + 2 = 4; 4 + 2 = 6; 6 + 2 = 8; 8 + 2 = 10; 10 + 2 = 12",
+      "So, 2 × 6 = 12",
+      "New Question: 5 × 2 means adding the number 5 two times: 5 + 5",
+      "Calculate the sum: 5 + 5 = 10",
+      "So, 5 × 2 = 10"
+    ],
+    "concepts": [
+      "Multiplication represents repeated addition.",
+      "The '×' symbol means 'times' or 'multiplied by'."
+    ],
+    "mistakes": [
+      "Confusing multiplication with division or addition.  For example, thinking 2 x 6 means 2 + 6 or 6 / 2.",
+      "Not understanding the concept of repeated addition."
+    ],
+    "difficulty": "entry",
+    "generatedFrom": {
+      "difficulty": "entry",
+      "question": "What is 2 × 6?",
+      "answer": "12",
+      "explanation": "2 × 6 means 2 groups of 6. You can count: 6, 12."
+    },
+    "createdAt": "2025-02-23T14:17:46.272Z",
+    "id": "71f98430-e70d-4c08-a527-4a7c9ecd0f22",
+    "_id": "67bb2e0ac30c60a7596c5aa2"
+  },
+  {
+    "question": "What is 3 × 4?",
+    "answer": "12",
+    "steps": [
+      "Original Question: 2 × 6 means adding 2 together 6 times.",
+      "2 + 2 + 2 + 2 + 2 + 2 = 12",
+      "New Question: 3 × 4 means adding 3 together 4 times.",
+      "3 + 3 + 3 + 3 = 12"
+    ],
+    "concepts": [
+      "Multiplication represents repeated addition.",
+      "The symbol '×' means 'times' or 'multiplied by'."
+    ],
+    "mistakes": [
+      "Confusing multiplication with division (2 x 6 is not 6 / 2).",
+      "Incorrectly adding the numbers (2 + 6 is not the same as 2 x 6)."
+    ],
+    "difficulty": "entry",
+    "generatedFrom": {
+      "difficulty": "entry",
+      "question": "What is 2 × 6?",
+      "answer": "12",
+      "explanation": "2 × 6 means 2 groups of 6. You can count: 6, 12."
+    },
+    "createdAt": "2025-02-23T14:17:47.912Z",
+    "id": "efc98da6-67f5-4ff4-827b-949624c70599",
+    "_id": "67bb2e0bc30c60a7596c5aa3"
+  },
+  {
+    "question": "What is 3 × 4?",
+    "answer": "12",
+    "steps": [
+      "Original Question: 2 × 6 means adding the number 2 six times.",
+      "2 + 2 + 2 + 2 + 2 + 2 = 12",
+      "New Question: 3 × 4 means adding the number 3 four times.",
+      "3 + 3 + 3 + 3 = 12"
+    ],
+    "concepts": [
+      "Multiplication represents repeated addition.",
+      "The '×' symbol means 'times' or 'multiplied by'."
+    ],
+    "mistakes": [
+      "Confusing multiplication with division (2 x 6 is not 6 / 2).",
+      "Not understanding the concept of repeated addition."
+    ],
+    "difficulty": "entry",
+    "generatedFrom": {
+      "difficulty": "entry",
+      "question": "What is 2 × 6?",
+      "answer": "12",
+      "explanation": "2 × 6 means 2 groups of 6. You can count: 6, 12."
+    },
+    "createdAt": "2025-02-23T14:17:50.137Z",
+    "id": "078f3ab0-e589-4873-b399-86ab35ebd9d6",
+    "_id": "67bb2e0ec30c60a7596c5aa4"
+  },
+  {
+    "question": "What is 12 ÷ 4?",
+    "answer": "3",
+    "steps": [
+      "Original Question: 15 ÷ 3 means 'How many groups of 3 are in 15?'",
+      "Think: 3 x ? = 15",
+      "Count by 3s: 3, 6, 9, 12, 15. We counted five 3s to reach 15.",
+      "So, 15 ÷ 3 = 5",
+      "New Question: 12 ÷ 4 means 'How many groups of 4 are in 12?'",
+      "Think: 4 x ? = 12",
+      "Count by 4s: 4, 8, 12.  We counted three 4s to reach 12.",
+      "So, 12 ÷ 4 = 3"
+    ],
+    "concepts": [
+      "Division represents splitting a total into equal groups.",
+      "Division is the inverse (opposite) of multiplication.",
+      "Understanding the relationship between multiplication and division helps in solving division problems."
+    ],
+    "mistakes": [
+      "Confusing division with subtraction (e.g., 15 - 3 = 12, leading to an incorrect answer).",
+      "Incorrectly estimating the number of groups.",
+      "Not understanding the meaning of the division symbol (÷) or the phrasing 'divided by'."
+    ],
+    "difficulty": "entry",
+    "generatedFrom": {
+      "difficulty": "entry",
+      "question": "What is 15 ÷ 3?",
+      "answer": "5",
+      "explanation": "15 ÷ 3 means how many groups of 3 are in 15. You can count: 3, 6, 9, 12, 15. That's 5 groups."
+    },
+    "createdAt": "2025-02-23T15:12:17.184Z",
+    "id": "f211328d-a42f-4a3d-8393-d002b8e4eee2",
+    "_id": "67bb3ad16193846d2acd3539"
+  },
+  {
+    "question": "A rectangular garden has a length of 12 meters and a width of 5 meters.  What is the perimeter of the garden?",
+    "answer": "34 meters",
+    "steps": [
+      "Original Question: Perimeter = 2 * (length + width) = 2 * (7 cm + 3 cm) = 2 * (10 cm) = 20 cm",
+      "New Question: Perimeter = 2 * (length + width) = 2 * (12 m + 5 m) = 2 * (17 m) = 34 m"
+    ],
+    "concepts": [
+      "Perimeter is the total distance around the outside of a shape.",
+      "The formula for the perimeter of a rectangle is Perimeter = 2 * (length + width) or Perimeter = 2*length + 2*width",
+      "Units of measurement (cm, m) are important parts of the answer."
+    ],
+    "mistakes": [
+      "Confusing perimeter with area (length * width).  The student likely multiplied 7 * 3 = 21 and then added an incorrect calculation on top of it to get 33",
+      "Forgetting to multiply the sum of the length and width by 2.  Adding 7 + 3 = 10 is only half the perimeter.",
+      "Not including units in the final answer. Perimeter is a measure of length, so it requires units like cm or m."
+    ],
+    "difficulty": "mid",
+    "generatedFrom": {
+      "difficulty": "mid",
+      "question": "What is the perimeter of a rectangle with length 7 cm and width 3 cm?",
+      "answer": "20 cm",
+      "explanation": "The perimeter is the distance around the rectangle. You can calculate it by adding all sides: 7 + 3 + 7 + 3 = 20 cm."
+    },
+    "createdAt": "2025-02-23T15:14:32.855Z",
+    "id": "eab7ff36-2e64-4794-a613-f09d89dead39",
+    "_id": "67bb3b586193846d2acd353a"
+  }
+]

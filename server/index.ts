@@ -5,7 +5,9 @@ import cors from 'cors';
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { error } from 'console';
-import { GoogleGenerativeAI } from "@google/generative-ai"
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import fs from "fs/promises"
+import path from "path"
 
 import { questions as initialQuestions, Question } from "../src/data/data"
 
@@ -268,6 +270,28 @@ function cleanAndParseJSON(text: string): any {
     }
   }
   
+  // Function to read existing questions from data.json
+async function readQuestionsFile(): Promise<any[]> {
+    try {
+        const filePath = path.join(process.cwd(), '..', 'src', 'data', 'data.json');
+        const fileData = await fs.readFile(filePath, 'utf-8');
+        return JSON.parse(fileData);
+    } catch (error) {
+        console.error('Error reading questions file:', error);
+        return [];
+    }
+}
+
+// Function to write questions to data.json
+async function writeQuestionsFile(questions: any[]): Promise<void> {
+    try {
+        const filePath = path.join(process.cwd(), '..', 'src', 'data', 'data.json');
+        await fs.writeFile(filePath, JSON.stringify(questions, null, 2));
+    } catch (error) {
+        console.error('Error writing questions file:', error);
+        throw error;
+    }
+}
   // Modified generate-similar-questions endpoint
   app.post("/generate-similar-questions", authenticateToken, async (req: Request, res: Response) => {
     try {
@@ -305,20 +329,38 @@ function cleanAndParseJSON(text: string): any {
   
       const result = await model.generateContent(prompt)
       const generatedContent = result.response.text()
-  
-      // Clean and parse the response
-      const parsedResponse = cleanAndParseJSON(generatedContent)
-  
-      // Store the new question in the database
-      const questionsCollection = database.collection("questions")
-      await questionsCollection.insertOne({
-        ...parsedResponse,
-        difficulty,
-        generatedFrom: originalQuestion,
-        createdAt: new Date(),
-      })
-  
-      res.json(parsedResponse)
+  // Clean and parse the response
+  const parsedResponse = cleanAndParseJSON(generatedContent)
+
+  // Add metadata to the generated question
+  const newQuestion = {
+    ...parsedResponse,
+    difficulty,
+    generatedFrom: originalQuestion,
+    createdAt: new Date(),
+    id: crypto.randomUUID() // Add a unique identifier
+};
+
+  // Store the new question in the database
+  const questionsCollection = database.collection("questions")
+  await questionsCollection.insertOne(newQuestion)
+  try {
+    // Read existing questions
+    const existingQuestions = await readQuestionsFile();
+    
+    // Add new question
+    existingQuestions.push(newQuestion);
+    
+    // Write back to file
+    await writeQuestionsFile(existingQuestions);
+    
+    console.log('Question saved to both database and data.json');
+} catch (error) {
+    console.error('Error saving to data.json:', error);
+    // Still return success if DB save worked but file save failed
+}
+
+res.json(newQuestion);
     } catch (error) {
       console.error("Error generating similar question:", error)
       res.status(500).json({
