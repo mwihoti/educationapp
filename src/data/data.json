@@ -503,5 +503,984 @@
     "createdAt": "2025-02-23T18:36:58.292Z",
     "id": "dc4c65fe-8cce-4b27-bf0b-f06a2feb249f",
     "_id": "67bb6aca6193846d2acd3541"
+  },
+  {
+    "question": "A rectangular garden has a length of 12 meters and a width of 5 meters.  What is the perimeter of the garden?",
+    "answer": "34 meters",
+    "steps": [
+      "Original Question: Perimeter = 2 * (length + width) = 2 * (7 cm + 3 cm) = 2 * (10 cm) = 20 cm",
+      "New Question: Perimeter = 2 * (length + width) = 2 * (12 m + 5 m) = 2 * (17 m) = 34 m"
+    ],
+    "concepts": [
+      "Perimeter is the total distance around the outside of a shape.",
+      "The formula for the perimeter of a rectangle is Perimeter = 2 * (length + width) or 2*length + 2*width.",
+      "Units of measurement (e.g., cm, m) are important and should be included in the final answer."
+    ],
+    "mistakes": [
+      "Adding only the given dimensions (length + width) instead of doubling the sum.",
+      "Forgetting to include units in the final answer.",
+      "Incorrectly applying the area formula (length * width) instead of the perimeter formula."
+    ],
+    "difficulty": "mid",
+    "generatedFrom": {
+      "difficulty": "mid",
+      "question": "What is the perimeter of a rectangle with length 7 cm and width 3 cm?",
+      "answer": "20 cm",
+      "explanation": "The perimeter is the distance around the rectangle. You can calculate it by adding all sides: 7 + 3 + 7 + 3 = 20 cm."
+    },
+    "createdAt": "2025-02-24T06:17:39.413Z",
+    "id": "3742bfbc-cf1d-45d5-a2ce-c04f12bc87d3",
+    "_id": "67bc0f03a03539dc87f212ed"
+  },
+  {
+    "question": "A rectangular garden has a length of 12 meters and a width of 5 meters.  What is the perimeter of the garden?",
+    "answer": "34 meters",
+    "steps": [
+      "Original Question: Perimeter = 2 * (length + width) = 2 * (7 cm + 3 cm) = 2 * (10 cm) = 20 cm",
+      "New Question: Perimeter = 2 * (length + width) = 2 * (12 m + 5 m) = 2 * (17 m) = 34 m"
+    ],
+    "concepts": [
+      "Perimeter is the total distance around the outside of a shape.",
+      "The formula for the perimeter of a rectangle is Perimeter = 2 * (length + width) or  2*length + 2*width",
+      "Units of measurement (e.g., cm, m) are essential parts of the answer."
+    ],
+    "mistakes": [
+      "Forgetting to include units in the final answer (e.g., writing 20 instead of 20 cm).",
+      "Confusing perimeter with area (Area = length * width).",
+      "Incorrectly applying the perimeter formula (e.g., adding length and width only once)."
+    ],
+    "difficulty": "mid",
+    "generatedFrom": {
+      "difficulty": "mid",
+      "question": "What is the perimeter of a rectangle with length 7 cm and width 3 cm?",
+      "answer": "20 cm",
+      "explanation": "The perimeter is the distance around the rectangle. You can calculate it by adding all sides: 7 + 3 + 7 + 3 = 20 cm."
+    },
+    "createdAt": "2025-02-24T06:19:11.109Z",
+    "id": "6b82c812-f8af-45cc-a921-095765a297ee",
+    "_id": "67bc0f5fa03539dc87f212ee"
+  },
+  {
+    "question": "A rectangular garden has a length of 12 meters and a width of 5 meters.  What is the perimeter of the garden?",
+    "answer": "34 m",
+    "steps": [
+      "Original Question: Perimeter = 2 * (length + width) = 2 * (7 cm + 3 cm) = 2 * 10 cm = 20 cm",
+      "New Question: Perimeter = 2 * (length + width) = 2 * (12 m + 5 m) = 2 * 17 m = 34 m"
+    ],
+    "concepts": [
+      "Perimeter is the total distance around the outside of a shape.",
+      "The formula for the perimeter of a rectangle is Perimeter = 2 * (length + width) or  Perimeter = 2*length + 2*width",
+      "Units of measurement (e.g., cm, m) are crucial parts of the answer."
+    ],
+    "mistakes": [
+      "Forgetting to include units in the final answer (e.g., writing 20 instead of 20 cm).",
+      "Confusing perimeter with area (Area = length * width).",
+      "Incorrectly applying the perimeter formula (e.g., adding length and width only once, or multiplying length and width by 2 separately and then adding them together without adding length and width first)."
+    ],
+    "difficulty": "mid",
+    "generatedFrom": {
+      "difficulty": "mid",
+      "question": "What is the perimeter of a rectangle with length 7 cm and width 3 cm?",
+      "answer": "20 cm",
+      "explanation": "The perimeter is the distance around the rectangle. You can calculate it by adding all sides: 7 + 3 + 7 + 3 = 20 cm."
+    },
+    "createdAt": "2025-02-24T06:19:16.296Z",
+    "id": "2ca0856c-a388-437b-be7f-be6d5efb5c28",
+    "_id": "67bc0f64a03539dc87f212ef"
+  },
+  {
+    "question": "A rectangular garden has a length of 12 meters and a width of 5 meters.  What is the perimeter of the garden?",
+    "answer": "34 meters",
+    "steps": [
+      "Original Question: Perimeter = 2 * (length + width) = 2 * (7 cm + 3 cm) = 2 * (10 cm) = 20 cm",
+      "New Question: Perimeter = 2 * (length + width) = 2 * (12 m + 5 m) = 2 * (17 m) = 34 m"
+    ],
+    "concepts": [
+      "Perimeter is the total distance around the outside of a shape.",
+      "The formula for the perimeter of a rectangle is Perimeter = 2 * (length + width) or 2*length + 2*width.",
+      "Units of measurement (e.g., cm, m) are crucial parts of the answer."
+    ],
+    "mistakes": [
+      "Forgetting to include the units in the final answer (e.g., writing 20 instead of 20 cm).",
+      "Incorrectly using the area formula (length * width) instead of the perimeter formula.",
+      "Forgetting to multiply the sum of the length and width by 2."
+    ],
+    "difficulty": "mid",
+    "generatedFrom": {
+      "difficulty": "mid",
+      "question": "What is the perimeter of a rectangle with length 7 cm and width 3 cm?",
+      "answer": "20 cm",
+      "explanation": "The perimeter is the distance around the rectangle. You can calculate it by adding all sides: 7 + 3 + 7 + 3 = 20 cm."
+    },
+    "createdAt": "2025-02-24T06:19:52.177Z",
+    "id": "78584e79-476a-4255-b1b8-5523fb334e90",
+    "_id": "67bc0f88a03539dc87f212f0"
+  },
+  {
+    "question": "A rectangular garden has a length of 12 meters and a width of 5 meters.  What is the perimeter of the garden?",
+    "answer": "34 meters",
+    "steps": [
+      "Original Question: Perimeter = 2 * (length + width) = 2 * (7 cm + 3 cm) = 2 * (10 cm) = 20 cm",
+      "New Question: Perimeter = 2 * (length + width) = 2 * (12 m + 5 m) = 2 * (17 m) = 34 m"
+    ],
+    "concepts": [
+      "Perimeter is the total distance around the outside of a shape.",
+      "The formula for the perimeter of a rectangle is Perimeter = 2 * (length + width) or Perimeter = 2*length + 2*width.",
+      "Length is the longer side of the rectangle and width is the shorter side."
+    ],
+    "mistakes": [
+      "Adding only the given sides (length + width) and not multiplying by 2.  This calculates only half the perimeter.",
+      "Confusing perimeter with area (length * width).",
+      "Incorrectly applying the formula due to misunderstanding of order of operations (multiply before adding within parentheses)."
+    ],
+    "difficulty": "mid",
+    "generatedFrom": {
+      "difficulty": "mid",
+      "question": "What is the perimeter of a rectangle with length 7 cm and width 3 cm?",
+      "answer": "20 cm",
+      "explanation": "The perimeter is the distance around the rectangle. You can calculate it by adding all sides: 7 + 3 + 7 + 3 = 20 cm."
+    },
+    "createdAt": "2025-02-24T06:19:58.255Z",
+    "id": "54b74608-b9b2-4b14-ae5e-b44e90f0ca0d",
+    "_id": "67bc0f8ea03539dc87f212f1"
+  },
+  {
+    "question": "A rectangular playground has a length of 20 meters and a width of 15 meters. What is the perimeter of the playground?",
+    "answer": "70 meters",
+    "steps": [
+      "Original Question:",
+      "Step 1: Recall the formula for the perimeter of a rectangle: Perimeter = 2 * (length + width)",
+      "Step 2: Substitute the given values: Perimeter = 2 * (12 meters + 5 meters)",
+      "Step 3: Add the length and width: Perimeter = 2 * (17 meters)",
+      "Step 4: Multiply by 2: Perimeter = 34 meters",
+      "New Question:",
+      "Step 1: Recall the formula for the perimeter of a rectangle: Perimeter = 2 * (length + width)",
+      "Step 2: Substitute the given values: Perimeter = 2 * (20 meters + 15 meters)",
+      "Step 3: Add the length and width: Perimeter = 2 * (35 meters)",
+      "Step 4: Multiply by 2: Perimeter = 70 meters"
+    ],
+    "concepts": [
+      "Perimeter is the total distance around the outside of a shape.",
+      "The formula for the perimeter of a rectangle is Perimeter = 2 * (length + width)  or  Perimeter = 2*length + 2*width",
+      "The units of measurement for perimeter are the same as the units for length and width."
+    ],
+    "mistakes": [
+      "Forgetting to multiply the sum of length and width by 2.",
+      "Adding length and width but forgetting the formula.",
+      "Confusing perimeter with area (length * width).",
+      "Forgetting to include units in the final answer (e.g., meters, centimeters)."
+    ],
+    "difficulty": "mid",
+    "generatedFrom": {
+      "question": "A rectangular garden has a length of 12 meters and a width of 5 meters.  What is the perimeter of the garden?",
+      "answer": "34 meters",
+      "steps": [
+        "Original Question: Perimeter = 2 * (length + width) = 2 * (7 cm + 3 cm) = 2 * (10 cm) = 20 cm",
+        "New Question: Perimeter = 2 * (length + width) = 2 * (12 m + 5 m) = 2 * (17 m) = 34 m"
+      ],
+      "concepts": [
+        "Perimeter is the total distance around the outside of a shape.",
+        "The formula for the perimeter of a rectangle is Perimeter = 2 * (length + width) or Perimeter = 2*length + 2*width.",
+        "Length is the longer side of the rectangle and width is the shorter side."
+      ],
+      "mistakes": [
+        "Adding only the given sides (length + width) and not multiplying by 2.  This calculates only half the perimeter.",
+        "Confusing perimeter with area (length * width).",
+        "Incorrectly applying the formula due to misunderstanding of order of operations (multiply before adding within parentheses)."
+      ],
+      "difficulty": "mid",
+      "generatedFrom": {
+        "difficulty": "mid",
+        "question": "What is the perimeter of a rectangle with length 7 cm and width 3 cm?",
+        "answer": "20 cm",
+        "explanation": "The perimeter is the distance around the rectangle. You can calculate it by adding all sides: 7 + 3 + 7 + 3 = 20 cm."
+      },
+      "createdAt": "2025-02-24T06:19:58.255Z",
+      "id": "54b74608-b9b2-4b14-ae5e-b44e90f0ca0d",
+      "_id": "67bc0f8ea03539dc87f212f1"
+    },
+    "createdAt": "2025-02-24T06:20:22.634Z",
+    "id": "32882eca-345f-45ac-ab17-b4188329590c",
+    "_id": "67bc0fa6a03539dc87f212f2"
+  },
+  {
+    "question": "A rectangular playground has a length of 20 meters and a width of 8 meters. What is the perimeter of the playground?",
+    "answer": "56 meters",
+    "steps": [
+      "Original Question:",
+      "Step 1: Recall the formula for the perimeter of a rectangle: Perimeter = 2 * (length + width)",
+      "Step 2: Substitute the given values into the formula: Perimeter = 2 * (12 meters + 5 meters)",
+      "Step 3: Perform the addition inside the parentheses: Perimeter = 2 * (17 meters)",
+      "Step 4: Multiply to find the perimeter: Perimeter = 34 meters",
+      "New Question:",
+      "Step 1: Recall the formula for the perimeter of a rectangle: Perimeter = 2 * (length + width)",
+      "Step 2: Substitute the given values into the formula: Perimeter = 2 * (20 meters + 8 meters)",
+      "Step 3: Perform the addition inside the parentheses: Perimeter = 2 * (28 meters)",
+      "Step 4: Multiply to find the perimeter: Perimeter = 56 meters"
+    ],
+    "concepts": [
+      "Perimeter is the total distance around the outside of a shape.",
+      "The formula for the perimeter of a rectangle is Perimeter = 2 * (length + width) or Perimeter = 2*length + 2*width",
+      "The units of measurement for perimeter are the same as the units of measurement for the length and width."
+    ],
+    "mistakes": [
+      "Adding only the given numbers (12+5 = 17).  This is half the perimeter, not the complete perimeter of the rectangle.",
+      "Multiplying the length and width (12 x 5 = 60). This calculates the area of the rectangle, not the perimeter.",
+      "Forgetting to include the units in the final answer.  Perimeter is a measurement, so units (like 'meters', 'feet', or 'inches') are essential."
+    ],
+    "difficulty": "mid",
+    "generatedFrom": {
+      "question": "A rectangular garden has a length of 12 meters and a width of 5 meters.  What is the perimeter of the garden?",
+      "answer": "34 meters",
+      "steps": [
+        "Original Question: Perimeter = 2 * (length + width) = 2 * (7 cm + 3 cm) = 2 * (10 cm) = 20 cm",
+        "New Question: Perimeter = 2 * (length + width) = 2 * (12 m + 5 m) = 2 * (17 m) = 34 m"
+      ],
+      "concepts": [
+        "Perimeter is the total distance around the outside of a shape.",
+        "The formula for the perimeter of a rectangle is Perimeter = 2 * (length + width) or Perimeter = 2*length + 2*width.",
+        "Length is the longer side of the rectangle and width is the shorter side."
+      ],
+      "mistakes": [
+        "Adding only the given sides (length + width) and not multiplying by 2.  This calculates only half the perimeter.",
+        "Confusing perimeter with area (length * width).",
+        "Incorrectly applying the formula due to misunderstanding of order of operations (multiply before adding within parentheses)."
+      ],
+      "difficulty": "mid",
+      "generatedFrom": {
+        "difficulty": "mid",
+        "question": "What is the perimeter of a rectangle with length 7 cm and width 3 cm?",
+        "answer": "20 cm",
+        "explanation": "The perimeter is the distance around the rectangle. You can calculate it by adding all sides: 7 + 3 + 7 + 3 = 20 cm."
+      },
+      "createdAt": "2025-02-24T06:19:58.255Z",
+      "id": "54b74608-b9b2-4b14-ae5e-b44e90f0ca0d",
+      "_id": "67bc0f8ea03539dc87f212f1"
+    },
+    "createdAt": "2025-02-24T06:21:02.315Z",
+    "id": "adcbc883-6f50-47b6-986c-9ea7419ab6df",
+    "_id": "67bc0fcea03539dc87f212f3"
+  },
+  {
+    "question": "A square playground has a side length of 8 meters. What is the perimeter of the playground?",
+    "answer": "32 meters",
+    "steps": [
+      "Original Question:",
+      "Step 1: Recall the formula for the perimeter of a rectangle: Perimeter = 2 * (length + width)",
+      "Step 2: Substitute the given values: Perimeter = 2 * (12 meters + 5 meters)",
+      "Step 3: Perform the addition inside the parentheses: Perimeter = 2 * (17 meters)",
+      "Step 4: Multiply: Perimeter = 34 meters",
+      "New Question:",
+      "Step 1: Recall the formula for the perimeter of a square: Perimeter = 4 * side length",
+      "Step 2: Substitute the given value: Perimeter = 4 * 8 meters",
+      "Step 3: Multiply: Perimeter = 32 meters"
+    ],
+    "concepts": [
+      "Perimeter is the total distance around the outside of a shape.",
+      "The formula for the perimeter of a rectangle is Perimeter = 2 * (length + width)",
+      "The formula for the perimeter of a square is Perimeter = 4 * side length",
+      "Units of measurement (meters) are important and should be included in the final answer."
+    ],
+    "mistakes": [
+      "Forgetting to multiply by 2 when calculating the perimeter of a rectangle.",
+      "Adding the length and width and considering it the perimeter.",
+      "Confusing perimeter with area.",
+      "Forgetting to include the units in the final answer (e.g., meters, centimeters)."
+    ],
+    "difficulty": "mid",
+    "generatedFrom": {
+      "question": "A rectangular garden has a length of 12 meters and a width of 5 meters.  What is the perimeter of the garden?",
+      "answer": "34 meters",
+      "steps": [
+        "Original Question: Perimeter = 2 * (length + width) = 2 * (7 cm + 3 cm) = 2 * (10 cm) = 20 cm",
+        "New Question: Perimeter = 2 * (length + width) = 2 * (12 m + 5 m) = 2 * (17 m) = 34 m"
+      ],
+      "concepts": [
+        "Perimeter is the total distance around the outside of a shape.",
+        "The formula for the perimeter of a rectangle is Perimeter = 2 * (length + width) or Perimeter = 2*length + 2*width.",
+        "Length is the longer side of the rectangle and width is the shorter side."
+      ],
+      "mistakes": [
+        "Adding only the given sides (length + width) and not multiplying by 2.  This calculates only half the perimeter.",
+        "Confusing perimeter with area (length * width).",
+        "Incorrectly applying the formula due to misunderstanding of order of operations (multiply before adding within parentheses)."
+      ],
+      "difficulty": "mid",
+      "generatedFrom": {
+        "difficulty": "mid",
+        "question": "What is the perimeter of a rectangle with length 7 cm and width 3 cm?",
+        "answer": "20 cm",
+        "explanation": "The perimeter is the distance around the rectangle. You can calculate it by adding all sides: 7 + 3 + 7 + 3 = 20 cm."
+      },
+      "createdAt": "2025-02-24T06:19:58.255Z",
+      "id": "54b74608-b9b2-4b14-ae5e-b44e90f0ca0d",
+      "_id": "67bc0f8ea03539dc87f212f1"
+    },
+    "createdAt": "2025-02-24T06:22:06.613Z",
+    "id": "ca0b5185-a4bd-4ff7-ab34-7d86d5e9006d",
+    "_id": "67bc100ea03539dc87f212f4"
+  },
+  {
+    "question": "What is 20% of 60?",
+    "answer": "12",
+    "steps": [
+      "**Original Question:** Convert the percentage to a decimal: 15% = 15/100 = 0.15",
+      "Multiply the decimal by the number: 0.15 * 80 = 12",
+      "**New Question:** Convert the percentage to a decimal: 20% = 20/100 = 0.20",
+      "Multiply the decimal by the number: 0.20 * 60 = 12"
+    ],
+    "concepts": [
+      "Understanding percentages as a fraction out of 100.",
+      "Converting percentages to decimals.",
+      "Multiplying a decimal by a whole number."
+    ],
+    "mistakes": [
+      "Dividing by the percentage instead of multiplying.  The student might have done 80 / 15 which gets close to 5.",
+      "Incorrectly converting the percentage to a decimal. For example, thinking 15% is 1.5 instead of 0.15.",
+      "Forgetting the concept of 'of' meaning multiplication."
+    ],
+    "difficulty": "mid",
+    "generatedFrom": {
+      "difficulty": "mid",
+      "question": "What is 15% of 80?",
+      "answer": "12",
+      "explanation": "To calculate 15% of 80, first calculate 10% (8) and 5% (4), then add them together: 8 + 4 = 12."
+    },
+    "createdAt": "2025-02-24T06:23:00.679Z",
+    "id": "9e72aec2-3728-4966-88dc-36605b06d2d0",
+    "_id": "67bc1044a03539dc87f212f5"
+  },
+  {
+    "question": "What is the area of a circle with a diameter of 16 inches? (Use π = 3.14)",
+    "answer": "200.96 inches²",
+    "steps": [
+      "Original Question: Area of a circle = π * r² where r is the radius.",
+      "Given radius = 5 cm and π = 3.14",
+      "Area = 3.14 * 5 * 5",
+      "Area = 3.14 * 25",
+      "Area = 78.5 cm²",
+      "New Question: Area of a circle = π * r² where r is the radius.",
+      "Given diameter = 16 inches, so radius = diameter/2 = 16/2 = 8 inches",
+      "Area = 3.14 * 8 * 8",
+      "Area = 3.14 * 64",
+      "Area = 200.96 inches²"
+    ],
+    "concepts": [
+      "The radius of a circle is the distance from the center to any point on the circle.",
+      "The diameter of a circle is twice the radius.",
+      "The area of a circle is calculated using the formula A = πr², where A is the area and r is the radius.",
+      "π (pi) is a mathematical constant, approximately equal to 3.14"
+    ],
+    "mistakes": [
+      "Confusing the radius with the diameter. Remember to divide the diameter by 2 to get the radius if the diameter is given.",
+      "Forgetting to square the radius.  The formula is πr², not πr.",
+      "Using the diameter instead of the radius in the area formula.",
+      "Forgetting to include the units in the final answer (cm², inches², etc.)."
+    ],
+    "difficulty": "advanced",
+    "generatedFrom": {
+      "difficulty": "advanced",
+      "question": "What is the area of a circle with radius 5 cm? (Use π = 3.14)",
+      "answer": "78.5 cm²",
+      "explanation": "The area of a circle is πr². So, 3.14 × 5² = 3.14 × 25 = 78.5 cm²."
+    },
+    "createdAt": "2025-02-24T06:27:23.203Z",
+    "id": "beb3246c-c24c-4797-8000-65c9cab5ad09",
+    "_id": "67bc114ba03539dc87f212f6"
+  },
+  {
+    "question": "A circular garden has a diameter of 12 meters.  If you want to cover the entire garden with mulch, what area (in square meters) needs to be covered? (Use π = 3.14)",
+    "answer": "113.04 m²",
+    "steps": [
+      "Original Question:",
+      "1. Recall the formula for the area of a circle: A = πr²",
+      "2. Substitute the given radius (r = 5 cm) into the formula: A = 3.14 * 5²",
+      "3. Calculate the square of the radius: A = 3.14 * 25",
+      "4. Multiply to find the area: A = 78.5 cm²",
+      "New Question:",
+      "1. Recall the formula for the area of a circle: A = πr²",
+      "2. Find the radius (r) from the given diameter (d = 12 m): r = d/2 = 12/2 = 6 m",
+      "3. Substitute the radius (r = 6 m) into the formula: A = 3.14 * 6²",
+      "4. Calculate the square of the radius: A = 3.14 * 36",
+      "5. Multiply to find the area: A = 113.04 m²"
+    ],
+    "concepts": [
+      "The area of a circle represents the space enclosed within the circle's circumference.",
+      "The formula for the area of a circle is A = πr², where 'A' is the area, 'π' is a mathematical constant approximately equal to 3.14, and 'r' is the radius of the circle.",
+      "The radius of a circle is the distance from the center of the circle to any point on its circumference.",
+      "The diameter of a circle is the distance across the circle through its center. It is twice the length of the radius (d = 2r).",
+      "Area is always measured in square units (e.g., cm², m², in²)."
+    ],
+    "mistakes": [
+      "Forgetting to include the units (cm², m², etc.) in the final answer. Area is always expressed in square units.",
+      "Confusing the diameter and radius.  Remember that the diameter is twice the radius.",
+      "Using the wrong formula. Be sure to use the formula for area (A = πr²) and not the formula for circumference (C = 2πr).",
+      "Incorrectly squaring the radius.  Make sure to multiply the radius by itself (r * r) before multiplying by π."
+    ],
+    "difficulty": "advanced",
+    "generatedFrom": {
+      "difficulty": "advanced",
+      "question": "What is the area of a circle with radius 5 cm? (Use π = 3.14)",
+      "answer": "78.5 cm²",
+      "explanation": "The area of a circle is πr². So, 3.14 × 5² = 3.14 × 25 = 78.5 cm²."
+    },
+    "createdAt": "2025-02-24T06:27:46.451Z",
+    "id": "d9caf99d-f00b-4e1b-b78c-bda1c427b642",
+    "_id": "67bc1162a03539dc87f212f7"
+  },
+  {
+    "question": "A circular garden has a diameter of 12 meters.  What is the area of the garden? (Use π = 3.14)",
+    "answer": "113.04 m²",
+    "steps": [
+      "Original Question:",
+      "1. Recall the formula for the area of a circle: A = πr²",
+      "2. Substitute the given radius (r = 5 cm) and the value of π (3.14) into the formula: A = (3.14)(5 cm)²",
+      "3. Calculate the square of the radius: A = (3.14)(25 cm²)",
+      "4. Multiply to find the area: A = 78.5 cm²",
+      "New Question:",
+      "1. Recall the formula for the area of a circle: A = πr²",
+      "2. Find the radius from the given diameter: r = d/2 = 12 m / 2 = 6 m",
+      "3. Substitute the radius (r = 6 m) and the value of π (3.14) into the formula: A = (3.14)(6 m)²",
+      "4. Calculate the square of the radius:  A = (3.14)(36 m²)",
+      "5. Multiply to find the area: A = 113.04 m²"
+    ],
+    "concepts": [
+      "The area of a circle is the space enclosed within its circumference.",
+      "The formula for the area of a circle is A = πr², where 'A' is the area, 'π' is a mathematical constant approximately equal to 3.14, and 'r' is the radius of the circle.",
+      "The radius of a circle is the distance from the center of the circle to any point on its circumference.",
+      "The diameter of a circle is the distance across the circle through its center, and it is twice the length of the radius (d = 2r).",
+      "The units of area are always squared (e.g., cm², m², in²)."
+    ],
+    "mistakes": [
+      "Forgetting to square the radius before multiplying by π.",
+      "Confusing diameter and radius. Remember to divide the diameter by 2 to find the radius.",
+      "Omitting the units (cm², m², etc.) in the final answer. Area is always expressed in square units.",
+      "Using an incorrect value for π.  Always use the value specified in the problem."
+    ],
+    "difficulty": "advanced",
+    "generatedFrom": {
+      "difficulty": "advanced",
+      "question": "What is the area of a circle with radius 5 cm? (Use π = 3.14)",
+      "answer": "78.5 cm²",
+      "explanation": "The area of a circle is πr². So, 3.14 × 5² = 3.14 × 25 = 78.5 cm²."
+    },
+    "createdAt": "2025-02-24T06:27:48.351Z",
+    "id": "fef0d47c-f083-4af3-9dfb-e11ac94197a3",
+    "_id": "67bc1164a03539dc87f212f8"
+  },
+  {
+    "question": "A circular garden has a diameter of 12 meters.  If you want to cover the entire garden with mulch, what area (in square meters) needs to be covered? (Use π = 3.14)",
+    "answer": "113.04 m²",
+    "steps": [
+      "Original Question:",
+      "1. Recall the formula for the area of a circle: A = πr²",
+      "2. Substitute the given radius (r = 5 cm) into the formula: A = 3.14 * (5 cm)²",
+      "3. Calculate the square of the radius: A = 3.14 * 25 cm²",
+      "4. Multiply to find the area: A = 78.5 cm²",
+      "New Question:",
+      "1. Recall the formula for the area of a circle: A = πr²",
+      "2. The diameter is given as 12 meters.  Find the radius by dividing the diameter by 2: r = 12 m / 2 = 6 m",
+      "3. Substitute the calculated radius (r = 6 m) into the formula: A = 3.14 * (6 m)²",
+      "4. Calculate the square of the radius: A = 3.14 * 36 m²",
+      "5. Multiply to find the area: A = 113.04 m²"
+    ],
+    "concepts": [
+      "The area of a circle represents the space enclosed within the circle's circumference.",
+      "The formula for the area of a circle is A = πr², where 'A' is the area, 'π' (pi) is a mathematical constant approximately equal to 3.14, and 'r' is the radius of the circle.",
+      "The radius is the distance from the center of the circle to any point on the circumference.",
+      "The diameter is twice the length of the radius.",
+      "Area is always measured in square units (e.g., cm², m², in²)."
+    ],
+    "mistakes": [
+      "Forgetting to square the radius before multiplying by π.",
+      "Confusing diameter and radius. Remember to divide the diameter by 2 to get the radius.",
+      "Omitting or using incorrect units. Area is always expressed in square units.",
+      "Using an incorrect value for π. Stick to the value given in the question."
+    ],
+    "difficulty": "advanced",
+    "generatedFrom": {
+      "difficulty": "advanced",
+      "question": "What is the area of a circle with radius 5 cm? (Use π = 3.14)",
+      "answer": "78.5 cm²",
+      "explanation": "The area of a circle is πr². So, 3.14 × 5² = 3.14 × 25 = 78.5 cm²."
+    },
+    "createdAt": "2025-02-24T06:28:00.266Z",
+    "id": "769fbb73-2875-4955-a491-d219cfcc72ed",
+    "_id": "67bc1170a03539dc87f212f9"
+  },
+  {
+    "question": "A circular garden has a diameter of 12 meters.  If you want to cover the entire garden with mulch, what area (in square meters) needs to be covered? (Use π = 3.14)",
+    "answer": "113.04 m²",
+    "steps": [
+      "Original Question:",
+      "1. Recall the formula for the area of a circle: A = πr²",
+      "2. Substitute the given radius (r = 5 cm) into the formula: A = 3.14 * 5²",
+      "3. Calculate the square of the radius: A = 3.14 * 25",
+      "4. Multiply to find the area: A = 78.5 cm²",
+      "New Question:",
+      "1. Recall the formula for the area of a circle: A = πr²",
+      "2. The diameter is given as 12 meters.  Find the radius by dividing the diameter by 2: r = 12/2 = 6 meters",
+      "3. Substitute the calculated radius (r = 6 m) into the formula: A = 3.14 * 6²",
+      "4. Calculate the square of the radius: A = 3.14 * 36",
+      "5. Multiply to find the area: A = 113.04 m²"
+    ],
+    "concepts": [
+      "The formula for the area of a circle is A = πr², where 'A' represents the area and 'r' represents the radius.",
+      "The radius is the distance from the center of the circle to any point on its circumference.",
+      "The diameter is twice the length of the radius.",
+      "Area is always measured in square units (e.g., cm², m²)."
+    ],
+    "mistakes": [
+      "Forgetting to include the units (cm², m²) in the final answer.",
+      "Confusing the diameter with the radius. Remember to divide the diameter by 2 to get the radius before using the formula.",
+      "Incorrectly applying the order of operations.  Square the radius *before* multiplying by pi.",
+      "Using the wrong formula. Ensure you are using the area formula (A = πr²) and not the circumference formula (C = 2πr)."
+    ],
+    "difficulty": "advanced",
+    "generatedFrom": {
+      "difficulty": "advanced",
+      "question": "What is the area of a circle with radius 5 cm? (Use π = 3.14)",
+      "answer": "78.5 cm²",
+      "explanation": "The area of a circle is πr². So, 3.14 × 5² = 3.14 × 25 = 78.5 cm²."
+    },
+    "createdAt": "2025-02-24T06:28:51.055Z",
+    "id": "e26274e0-f724-4af4-97b7-33beae6abf20",
+    "_id": "67bc11a3a03539dc87f212fa"
+  },
+  {
+    "question": "A circular garden has a diameter of 12 meters.  If you want to cover the entire garden with mulch, what area (in square meters) needs to be covered? (Use π = 3.14)",
+    "answer": "113.04 m²",
+    "steps": [
+      "Original Question:",
+      "1. Recall the formula for the area of a circle: A = πr²",
+      "2. Substitute the given radius (r = 5 cm) into the formula: A = 3.14 * 5²",
+      "3. Calculate the square of the radius: A = 3.14 * 25",
+      "4. Multiply to find the area: A = 78.5 cm²",
+      "New Question:",
+      "1. Recall the formula for the area of a circle: A = πr²",
+      "2. Find the radius from the given diameter: r = d/2 = 12 m / 2 = 6 m",
+      "3. Substitute the calculated radius (r = 6 m) into the formula: A = 3.14 * 6²",
+      "4. Calculate the square of the radius: A = 3.14 * 36",
+      "5. Multiply to find the area: A = 113.04 m²"
+    ],
+    "concepts": [
+      "The area of a circle represents the space enclosed within the circle's circumference.",
+      "The formula for the area of a circle is A = πr², where 'A' is the area, 'π' (pi) is a mathematical constant approximately equal to 3.14, and 'r' is the radius of the circle.",
+      "The radius of a circle is the distance from the center of the circle to any point on its circumference.",
+      "The diameter of a circle is a line segment that passes through the center of the circle and whose endpoints lie on the circle. It is twice the length of the radius.",
+      "Area is always measured in square units (e.g., cm², m², in²)."
+    ],
+    "mistakes": [
+      "Forgetting to square the radius before multiplying by π.",
+      "Confusing diameter and radius. Remember to divide the diameter by 2 to find the radius if the diameter is provided.",
+      "Omitting or using incorrect units. Area must be expressed in square units.",
+      "Using an incorrect value for π.  Stick to the value specified in the instructions (in this case, 3.14)."
+    ],
+    "difficulty": "advanced",
+    "generatedFrom": {
+      "difficulty": "advanced",
+      "question": "What is the area of a circle with radius 5 cm? (Use π = 3.14)",
+      "answer": "78.5 cm²",
+      "explanation": "The area of a circle is πr². So, 3.14 × 5² = 3.14 × 25 = 78.5 cm²."
+    },
+    "createdAt": "2025-02-24T06:29:00.902Z",
+    "id": "6aace62b-b6b9-4906-a6c5-78bf1f3378a6",
+    "_id": "67bc11aca03539dc87f212fb"
+  },
+  {
+    "question": "What is 6 + 9?",
+    "answer": "15",
+    "steps": [
+      "Original Question: 7 + 8",
+      "Step 1: Start with the larger number (8).",
+      "Step 2: Count up 7 more.  (9, 10, 11, 12, 13, 14, 15)",
+      "Step 3: The answer is 15.",
+      "New Question: 6 + 9",
+      "Step 1: Start with the larger number (9).",
+      "Step 2: Count up 6 more. (10, 11, 12, 13, 14, 15)",
+      "Step 3: The answer is 15."
+    ],
+    "concepts": [
+      "Addition means combining two or more numbers to find their total.",
+      "Counting up is a strategy for adding small numbers."
+    ],
+    "mistakes": [
+      "Miscounting when adding.",
+      "Starting with the smaller number and not counting enough."
+    ],
+    "difficulty": "entry",
+    "generatedFrom": {
+      "difficulty": "entry",
+      "question": "What is 7 + 8?",
+      "answer": "15",
+      "explanation": "You can break 8 into 3 and 5. Add 3 to 7 to get 10, then add the remaining 5 to get 15."
+    },
+    "createdAt": "2025-02-24T06:35:26.835Z",
+    "id": "ac2b606d-c441-4aca-8ce3-01f0f84bd42b",
+    "_id": "67bc132ea03539dc87f212fc"
+  },
+  {
+    "question": "What is 15 - 4?",
+    "answer": "11",
+    "steps": [
+      "Original Question: 20 - 7",
+      "Step 1: Start at 20.",
+      "Step 2: Count backward 7 units (19, 18, 17, 16, 15, 14, 13).",
+      "Step 3: The answer is 13.",
+      "New Question: 15 - 4",
+      "Step 1: Start at 15.",
+      "Step 2: Count backward 4 units (14, 13, 12, 11).",
+      "Step 3: The answer is 11."
+    ],
+    "concepts": [
+      "Subtraction represents taking away a smaller number from a bigger number.",
+      "Counting backward is a helpful strategy for simple subtraction.",
+      "The result of subtraction is called the difference."
+    ],
+    "mistakes": [
+      "Miscounting while counting backward.",
+      "Counting forward instead of backward.",
+      "Not understanding the concept of 'taking away'."
+    ],
+    "difficulty": "entry",
+    "generatedFrom": {
+      "difficulty": "entry",
+      "question": "What is 20 - 7?",
+      "answer": "13",
+      "explanation": "To subtract 7 from 20, you can count backwards 7 steps from 20: 19, 18, 17, 16, 15, 14, 13."
+    },
+    "createdAt": "2025-02-24T06:37:14.832Z",
+    "id": "a0e84b21-b441-41e1-b386-171b651dac6e",
+    "_id": "67bc139aa03539dc87f212fd"
+  },
+  {
+    "question": "What is 15 - 4?",
+    "answer": "11",
+    "steps": [
+      "Original Question: 20 - 7",
+      "Step 1: Start at 20.",
+      "Step 2: Count backwards 7 units (19, 18, 17, 16, 15, 14, 13).",
+      "Step 3: You land on 13.",
+      "New Question: 15 - 4",
+      "Step 1: Start at 15.",
+      "Step 2: Count backwards 4 units (14, 13, 12, 11).",
+      "Step 3: You land on 11."
+    ],
+    "concepts": [
+      "Subtraction represents taking away or finding the difference between two numbers.",
+      "Counting backwards is a strategy for solving basic subtraction problems."
+    ],
+    "mistakes": [
+      "Counting forwards instead of backwards when subtracting.",
+      "Miscounting while counting backwards.",
+      "Not understanding the meaning of the minus (-) symbol."
+    ],
+    "difficulty": "entry",
+    "generatedFrom": {
+      "difficulty": "entry",
+      "question": "What is 20 - 7?",
+      "answer": "13",
+      "explanation": "To subtract 7 from 20, you can count backwards 7 steps from 20: 19, 18, 17, 16, 15, 14, 13."
+    },
+    "createdAt": "2025-02-24T06:37:41.518Z",
+    "id": "c0d20b2c-d860-4b0b-bb1b-58bcb6720d3e",
+    "_id": "67bc13b5a03539dc87f212fe"
+  },
+  {
+    "question": "What is 12 ÷ 4?",
+    "answer": "3",
+    "steps": [
+      "Original Question: 15 ÷ 3 means how many times does 3 fit into 15?",
+      "Think: 3 x ? = 15",
+      "Count by 3s: 3, 6, 9, 12, 15 (We counted five 3s)",
+      "So, 15 ÷ 3 = 5",
+      "New Question: 12 ÷ 4 means how many times does 4 fit into 12?",
+      "Think: 4 x ? = 12",
+      "Count by 4s: 4, 8, 12 (We counted three 4s)",
+      "So, 12 ÷ 4 = 3"
+    ],
+    "concepts": [
+      "Division represents sharing or splitting into equal groups.",
+      "Division is the inverse operation of multiplication.",
+      "The division symbol '÷' means 'divided by'."
+    ],
+    "mistakes": [
+      "Confusing division with subtraction or addition.",
+      "Not understanding the relationship between multiplication and division.",
+      "Incorrectly counting the number of groups or items in each group."
+    ],
+    "difficulty": "entry",
+    "generatedFrom": {
+      "difficulty": "entry",
+      "question": "What is 15 ÷ 3?",
+      "answer": "5",
+      "explanation": "15 ÷ 3 means how many groups of 3 are in 15. You can count: 3, 6, 9, 12, 15. That's 5 groups."
+    },
+    "createdAt": "2025-02-24T08:06:51.436Z",
+    "id": "10996a0e-45e5-4018-a0b9-9eb6a7f97e92",
+    "_id": "67bc289ba03539dc87f212ff"
+  },
+  {
+    "question": "What is 5 × 3?",
+    "answer": "15",
+    "steps": [
+      "Original Question: 2 × 6 means adding 2 together 6 times: 2 + 2 + 2 + 2 + 2 + 2",
+      "Calculate the sum: 2 + 2 = 4, 4 + 2 = 6, 6 + 2 = 8, 8 + 2 = 10, 10 + 2 = 12",
+      "So, 2 × 6 = 12",
+      "New Question: 5 × 3 means adding 5 together 3 times: 5 + 5 + 5",
+      "Calculate the sum: 5 + 5 = 10, 10 + 5 = 15",
+      "So, 5 × 3 = 15"
+    ],
+    "concepts": [
+      "Multiplication represents repeated addition.",
+      "The multiplication symbol '×' means 'times'."
+    ],
+    "mistakes": [
+      "Confusing multiplication with addition (e.g., thinking 2 × 6 = 2 + 6 = 8).",
+      "Not understanding the concept of repeated addition."
+    ],
+    "difficulty": "entry",
+    "generatedFrom": {
+      "difficulty": "entry",
+      "question": "What is 2 × 6?",
+      "answer": "12",
+      "explanation": "2 × 6 means 2 groups of 6. You can count: 6, 12."
+    },
+    "createdAt": "2025-02-24T08:08:13.746Z",
+    "id": "81ac60fc-65b8-4525-ac0d-773d1d25e822",
+    "_id": "67bc28eda03539dc87f21300"
+  },
+  {
+    "question": "What is 12 × 5?",
+    "answer": "60",
+    "steps": [
+      "Original Question: 13 × 4",
+      "Step 1: Break down 13 into 10 and 3.  (13 = 10 + 3)",
+      "Step 2: Multiply 10 by 4. (10 × 4 = 40)",
+      "Step 3: Multiply 3 by 4. (3 × 4 = 12)",
+      "Step 4: Add the results from steps 2 and 3. (40 + 12 = 52)",
+      "New Question: 12 × 5",
+      "Step 1: Break down 12 into 10 and 2. (12 = 10 + 2)",
+      "Step 2: Multiply 10 by 5. (10 × 5 = 50)",
+      "Step 3: Multiply 2 by 5. (2 × 5 = 10)",
+      "Step 4: Add the results from steps 2 and 3. (50 + 10 = 60)"
+    ],
+    "concepts": [
+      "Multiplication as repeated addition",
+      "Distributive property of multiplication (a × (b + c) = (a × b) + (a × c))",
+      "Breaking down larger numbers into smaller, manageable parts for easier multiplication",
+      "Place value (tens and ones)"
+    ],
+    "mistakes": [
+      "Incorrectly adding the numbers instead of multiplying (e.g., 13 + 4 = 17, or seeing 1 + 1 = 2 and 3 + 4 =7 then getting 27)",
+      "Not understanding the concept of carrying over in multiplication",
+      "Confusing multiplication with other operations",
+      "Not breaking down the larger number into smaller parts which makes the calculation more manageable."
+    ],
+    "difficulty": "mid",
+    "generatedFrom": {
+      "difficulty": "mid",
+      "question": "What is 13 × 4?",
+      "answer": "52",
+      "explanation": "You can break this down: (10 × 4) + (3 × 4) = 40 + 12 = 52."
+    },
+    "createdAt": "2025-02-24T08:09:23.967Z",
+    "id": "94c3a363-6512-44fe-b44e-8fea70799a02",
+    "_id": "67bc2933a03539dc87f21301"
+  },
+  {
+    "question": "What is 12 × 5?",
+    "answer": "60",
+    "steps": [
+      "Original Question: 13 × 4",
+      "Step 1: Break down 13 into 10 and 3.  So, 13 × 4 becomes (10 × 4) + (3 × 4).",
+      "Step 2: Calculate 10 × 4 = 40.",
+      "Step 3: Calculate 3 × 4 = 12.",
+      "Step 4: Add the results from steps 2 and 3: 40 + 12 = 52.",
+      "New Question: 12 × 5",
+      "Step 1: Break down 12 into 10 and 2. So, 12 × 5 becomes (10 × 5) + (2 × 5).",
+      "Step 2: Calculate 10 × 5 = 50.",
+      "Step 3: Calculate 2 × 5 = 10.",
+      "Step 4: Add the results from steps 2 and 3: 50 + 10 = 60."
+    ],
+    "concepts": [
+      "Multiplication as repeated addition",
+      "Distributive property of multiplication (a × (b + c) = (a × b) + (a × c))",
+      "Breaking down larger numbers into smaller, manageable parts for easier calculation",
+      "Times tables or multiplication facts up to 10"
+    ],
+    "mistakes": [
+      "Incorrect recall of multiplication facts",
+      "Not correctly applying the distributive property",
+      "Errors in addition when combining partial products",
+      "Misinterpreting the multiplication operation"
+    ],
+    "difficulty": "mid",
+    "generatedFrom": {
+      "difficulty": "mid",
+      "question": "What is 13 × 4?",
+      "answer": "52",
+      "explanation": "You can break this down: (10 × 4) + (3 × 4) = 40 + 12 = 52."
+    },
+    "createdAt": "2025-02-24T08:09:47.137Z",
+    "id": "d73fee5a-2447-4b9c-af69-07e088d816a3",
+    "_id": "67bc294ba03539dc87f21302"
+  },
+  {
+    "question": "What is 3 × 4?",
+    "answer": "12",
+    "steps": [
+      "Original Question: 2 × 6 means adding 2 together 6 times.",
+      "2 + 2 + 2 + 2 + 2 + 2 = 12",
+      "New Question: 3 × 4 means adding 3 together 4 times.",
+      "3 + 3 + 3 + 3 = 12"
+    ],
+    "concepts": [
+      "Multiplication represents repeated addition.",
+      "The '×' symbol means 'times' or 'multiplied by'."
+    ],
+    "mistakes": [
+      "Confusing multiplication with addition (e.g., thinking 2 × 6 is 2 + 6).",
+      "Not understanding the concept of repeated addition."
+    ],
+    "difficulty": "entry",
+    "generatedFrom": {
+      "difficulty": "entry",
+      "question": "What is 2 × 6?",
+      "answer": "12",
+      "explanation": "2 × 6 means 2 groups of 6. You can count: 6, 12."
+    },
+    "createdAt": "2025-02-24T08:19:12.279Z",
+    "id": "b7e4c038-021a-4eb1-94f5-a56f4cdf61d2",
+    "_id": "67bc2b80a03539dc87f21303"
+  },
+  {
+    "question": "Find the mode of the following data set: 1, 7, 7, 8, 2, 2, 2, 9, 10",
+    "answer": "2",
+    "steps": [
+      "Original Question:  List all the numbers: 2, 3, 3, 4, 5, 5, 5, 6",
+      "Original Question: Count how many times each number appears: 2 appears once, 3 appears twice, 4 appears once, 5 appears three times, 6 appears once.",
+      "Original Question: Identify the number that appears most often: 5 appears three times, which is more than any other number.",
+      "Original Question: The mode is 5.",
+      "New Question: List all the numbers: 1, 7, 7, 8, 2, 2, 2, 9, 10",
+      "New Question: Count how many times each number appears: 1 appears once, 7 appears twice, 8 appears once, 2 appears three times, 9 appears once, 10 appears once.",
+      "New Question: Identify the number that appears most often: 2 appears three times, which is more than any other number.",
+      "New Question: The mode is 2."
+    ],
+    "concepts": [
+      "The mode is the value that appears most frequently in a set of data.",
+      "A data set can have one mode, more than one mode (bimodal, trimodal, etc.), or no mode at all if all values appear with the same frequency."
+    ],
+    "mistakes": [
+      "Confusing mode with median (the middle value when the data is ordered) or mean (the average of the values).",
+      "Incorrectly counting the occurrences of each number in the data set.",
+      "Choosing a number that appears frequently but not the *most* frequently."
+    ],
+    "difficulty": "mid",
+    "generatedFrom": {
+      "difficulty": "mid",
+      "question": "What is the mode of the numbers: 2, 3, 3, 4, 5, 5, 5, 6?",
+      "answer": "5",
+      "explanation": "The mode is the number that appears most frequently. In this set, 5 appears three times, more than any other number."
+    },
+    "createdAt": "2025-02-24T08:20:46.558Z",
+    "id": "8196f34a-e97b-459a-a1c2-7f873cf6f495",
+    "_id": "67bc2bdea03539dc87f21304"
+  },
+  {
+    "question": "Find the mode of the following data set: 1, 7, 7, 8, 9, 9, 9, 10, 12",
+    "answer": "9",
+    "steps": [
+      "Step 1: Original Question:  List out all the numbers: 2, 3, 3, 4, 5, 5, 5, 6",
+      "Step 2: Original Question: Count how many times each number appears.  2 appears once, 3 appears twice, 4 appears once, 5 appears three times, and 6 appears once.",
+      "Step 3: Original Question: The number that appears most often is the mode. In this case, 5 appears three times, which is more than any other number. Therefore, the mode is 5.",
+      "Step 1: New Question: List out all the numbers: 1, 7, 7, 8, 9, 9, 9, 10, 12",
+      "Step 2: New Question: Count how many times each number appears. 1 appears once, 7 appears twice, 8 appears once, 9 appears three times, 10 appears once, and 12 appears once.",
+      "Step 3: New Question:  The number that appears most often is the mode. In this case, 9 appears three times, which is more than any other number.  Therefore, the mode is 9."
+    ],
+    "concepts": [
+      "Mode: The mode is the value that appears most frequently in a data set.",
+      "Frequency:  How often a value appears in a data set."
+    ],
+    "mistakes": [
+      "Confusing mode with median (the middle value when the data is ordered) or mean (the average).",
+      "Incorrectly counting the frequency of each number.",
+      "If there are two numbers with the same highest frequency, thinking there is *no* mode. In this case, there are *two* modes (bimodal), or if more than two, the data set is multimodal."
+    ],
+    "difficulty": "mid",
+    "generatedFrom": {
+      "difficulty": "mid",
+      "question": "What is the mode of the numbers: 2, 3, 3, 4, 5, 5, 5, 6?",
+      "answer": "5",
+      "explanation": "The mode is the number that appears most frequently. In this set, 5 appears three times, more than any other number."
+    },
+    "createdAt": "2025-02-24T08:21:34.746Z",
+    "id": "58364e51-c34a-4794-b078-efcdd4368c34",
+    "_id": "67bc2c0ea03539dc87f21305"
+  },
+  {
+    "question": "What is 9 - 2?",
+    "answer": "7",
+    "steps": [
+      "Original Question: 10 - 4",
+      "Start with the larger number: 10",
+      "Count backwards the smaller number of times: 10, 9, 8, 7, 6",
+      "The number you land on is the answer: 6",
+      "New Question: 9 - 2",
+      "Start with the larger number: 9",
+      "Count backwards the smaller number of times: 9, 8, 7",
+      "The number you land on is the answer: 7"
+    ],
+    "concepts": [
+      "Subtraction represents taking away or finding the difference between two numbers.",
+      "Counting backwards is a helpful strategy for basic subtraction."
+    ],
+    "mistakes": [
+      "Miscounting while counting backwards.",
+      "Confusing subtraction with addition."
+    ],
+    "difficulty": "entry",
+    "generatedFrom": {
+      "difficulty": "entry",
+      "question": "What is 10 - 4?",
+      "answer": "6",
+      "explanation": "To subtract 4 from 10, you can count backwards 4 steps from 10: 9, 8, 7, 6."
+    },
+    "createdAt": "2025-02-24T08:27:42.097Z",
+    "id": "29a86f43-076a-4820-a474-73c242ac1124",
+    "_id": "67bc2d7ea03539dc87f21306"
+  },
+  {
+    "question": "What is 9 - 3?",
+    "answer": "6",
+    "steps": [
+      "Original Question: 10 - 4",
+      "Start with the larger number: 10",
+      "Count down 4 units: 10, 9, 8, 7, 6",
+      "The answer is 6.",
+      "New Question: 9 - 3",
+      "Start with the larger number: 9",
+      "Count down 3 units: 9, 8, 7, 6",
+      "The answer is 6."
+    ],
+    "concepts": [
+      "Subtraction represents taking away from a group.",
+      "Subtracting a smaller number from a larger number results in a smaller number."
+    ],
+    "mistakes": [
+      "Counting up instead of down when subtracting.",
+      "Starting with the smaller number instead of the larger number in subtraction.",
+      "Miscounting while counting down."
+    ],
+    "difficulty": "entry",
+    "generatedFrom": {
+      "difficulty": "entry",
+      "question": "What is 10 - 4?",
+      "answer": "6",
+      "explanation": "To subtract 4 from 10, you can count backwards 4 steps from 10: 9, 8, 7, 6."
+    },
+    "createdAt": "2025-02-24T08:28:29.497Z",
+    "id": "9c1fb0de-d602-4619-9559-73cbbf2fae31",
+    "_id": "67bc2dada03539dc87f21307"
   }
 ]

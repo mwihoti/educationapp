@@ -16,11 +16,13 @@ MathWhiz is an innovative, AI-powered math learning application designed to help
 
 
 ## Screenshots
+Video https://go.screenpal.com/watch/cTnZjJnh9HB
 
 ![Screenshot 1](public/1.png)
 ![Screenshot 2](public/2.png)
 ![Screenshot 3](public/3.png)
 ![Screenshot 4](public/4.png)
+
 
 
 ## Technology Stack
