@@ -19,7 +19,7 @@
   "dependencies": {
     "@ai-sdk/openai": "^1.1.13",
     "@google/generative-ai": "^0.22.0",
-    "ai": "^4.1.45",
+    "ai": "^7.0.87",
     "autoprefixer": "^10.4.20",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^3.0.2",
